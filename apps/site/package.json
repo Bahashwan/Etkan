@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@backdoor_est/etkan-ui-elements": "^0.1.0",
+    "@backdoor_est/etkan-ui-elements": "^0.2.0",
     "@backdoor_est/etkan-ui-react": "^0.1.0",
     "@backdoor_est/etkan-ui-tokens": "^0.1.0",
     "next": "^15.1.6",

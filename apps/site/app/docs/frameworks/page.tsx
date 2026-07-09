@@ -5,6 +5,7 @@ import { useUI } from "../../providers";
 import { FrameworkTabs } from "@/components/framework-tabs";
 import { CodeBlock } from "@/components/code-block";
 import { WcLive } from "@/components/wc-live";
+import { WcOverlays } from "@/components/wc-overlays";
 
 export default function FrameworksDocs() {
   const { dir } = useUI();
@@ -26,6 +27,41 @@ export default function FrameworksDocs() {
           : "The elements below are the published package running inside this page. Flip language and theme up top."}
       </p>
       <WcLive />
+
+      <h2>{ar ? "طبقات عائمة" : "Overlays"}</h2>
+      <p>
+        {ar
+          ? "حوارات، تنبيهات، قوائم، تلميحات، تبويبات، جداول وقوائم اختيار — كلها عناصر ويب. جرّبها:"
+          : "Dialogs, toasts, menus, tooltips, tabs, tables, and selects — all Web Components. Try them:"}
+      </p>
+      <WcOverlays />
+      <CodeBlock
+        lang="html"
+        code={`<!-- Dialog (uses the native <dialog> for backdrop + focus) -->
+<etkan-button onclick="dlg.open = true">Open</etkan-button>
+<etkan-dialog id="dlg" heading="Delete campaign?" description="This can't be undone.">
+  <p>The campaign will be permanently removed.</p>
+  <etkan-button slot="footer" variant="danger">Delete</etkan-button>
+</etkan-dialog>
+
+<!-- Tooltip · Menu · Tabs -->
+<etkan-tooltip content="Copy"><etkan-button>Hover</etkan-button></etkan-tooltip>
+
+<etkan-tabs value="profile">
+  <div label="Profile" value="profile">…</div>
+  <div label="Billing" value="billing">…</div>
+</etkan-tabs>
+
+<!-- Data-driven: set properties in JS -->
+<etkan-select id="sel" label="City"></etkan-select>
+<etkan-table id="tbl"></etkan-table>
+<script>
+  sel.options = [{ value: "ry", label: "Riyadh" }];
+  tbl.columns = [{ key: "id", header: "Invoice" }];
+  tbl.data = [{ id: "INV-1042" }];
+  menu.items = [{ label: "Edit" }, { divider: true }, { label: "Delete", danger: true }];
+</script>`}
+      />
 
       <h2>{ar ? "التثبيت لكل إطار" : "Install per framework"}</h2>
       <FrameworkTabs />
