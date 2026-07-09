@@ -15,7 +15,7 @@ export function SiteFooter() {
           {ar ? "مهنّد باحشوان" : "Mohanad Bahashwan"}
         </span>
         <span style={{ display: "flex", gap: "var(--space-4)" }}>
-          <Link href="/docs">{ar ? "التوثيق" : "Docs"}</Link>
+          <Link href="/docs">{ar ? "الدليل" : "Docs"}</Link>
           <a href="https://www.npmjs.com/package/@backdoor_est/etkan-ui-react" target="_blank" rel="noreferrer">
             npm
           </a>

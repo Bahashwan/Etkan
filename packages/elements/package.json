@@ -1,0 +1,43 @@
+{
+  "name": "@backdoor_est/etkan-ui-elements",
+  "version": "0.1.0",
+  "description": "ETKAN UI — اتقان · framework-agnostic Web Components (Lit). Bilingual (AR RTL / EN LTR), light/dark. Works in Angular, Vue, Svelte, plain HTML, and React.",
+  "license": "MIT",
+  "keywords": [
+    "web-components",
+    "custom-elements",
+    "lit",
+    "design-system",
+    "rtl",
+    "arabic",
+    "angular",
+    "vue",
+    "svelte",
+    "etkan"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "unpkg": "./dist/index.global.js",
+  "jsdelivr": "./dist/index.global.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./global": "./dist/index.global.js"
+  },
+  "sideEffects": true,
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "lit": "^3.2.1"
+  }
+}

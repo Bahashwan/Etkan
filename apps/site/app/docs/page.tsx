@@ -12,7 +12,7 @@ export default function GettingStarted() {
 
   return (
     <>
-      <h1>{ar ? "البداية" : "Getting started"}</h1>
+      <h1>{ar ? "كيف تبدأ" : "Getting started"}</h1>
       <p>
         {ar
           ? "اتقان نظام تصميم ثنائي اللغة (عربي RTL / إنجليزي LTR)، فاتح وداكن، لواجهات React. نسخة واحدة تخدم الاتجاهين، مدعومة بوحدات تصميم CSS خالصة تعمل مع أي إطار."

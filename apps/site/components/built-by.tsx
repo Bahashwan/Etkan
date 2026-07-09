@@ -67,7 +67,7 @@ export function BuiltBy() {
         className="muted"
         style={{ textAlign: "center", fontSize: "var(--text-sm)", marginBlockEnd: "var(--space-5)" }}
       >
-        {ar ? "من صناعة" : "Built by"}
+        {ar ? "من تطوير" : "Built by"}
       </p>
       <div
         style={{

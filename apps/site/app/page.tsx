@@ -298,7 +298,7 @@ export default function HomePage() {
                 {ar ? "ثبّت الحزمة، اقرأ الدليل، وأطلق واجهة عربية/إنجليزية في دقائق." : "Install the package, read the guide, and ship a bilingual UI in minutes."}
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
-                <Link href="/docs"><Button size="lg" variant="secondary">{ar ? "اقرأ التوثيق" : "Read the docs"}</Button></Link>
+                <Link href="/docs"><Button size="lg" variant="secondary">{ar ? "اقرأ الدليل" : "Read the docs"}</Button></Link>
                 <a href="https://www.npmjs.com/package/@backdoor_est/etkan-ui-react" target="_blank" rel="noreferrer">
                   <Button size="lg" variant="ghost" style={{ color: "#fff", borderColor: "rgba(255,255,255,0.4)" }}>npm</Button>
                 </a>

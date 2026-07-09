@@ -21,8 +21,10 @@ export function useUI(): UIState {
 }
 
 export function Providers({ children }: { children: React.ReactNode }) {
+  // Arabic is the primary language — default to RTL. A saved preference or the
+  // header toggle can switch to English.
   const [theme, setTheme] = React.useState<Theme>("light");
-  const [dir, setDir] = React.useState<Dir>("ltr");
+  const [dir, setDir] = React.useState<Dir>("rtl");
 
   // Restore saved preferences on mount.
   React.useEffect(() => {
