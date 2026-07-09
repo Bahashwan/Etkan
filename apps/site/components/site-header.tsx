@@ -18,6 +18,12 @@ export function SiteHeader() {
   const { theme, dir, toggleTheme, toggleDir } = useUI();
   const pathname = usePathname();
   const ar = dir === "rtl";
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  // Close the mobile menu whenever the route changes.
+  React.useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   return (
     <header className="site-header">
@@ -67,7 +73,7 @@ export function SiteHeader() {
             )}
           </button>
           <a
-            className="pill-toggle"
+            className="pill-toggle icon-only"
             href={GITHUB_URL}
             target="_blank"
             rel="noreferrer"
@@ -75,7 +81,35 @@ export function SiteHeader() {
           >
             <GithubIcon width={16} height={16} />
           </a>
+          <button
+            className="pill-toggle menu-btn"
+            onClick={() => setMenuOpen((o) => !o)}
+            aria-label={ar ? "القائمة" : "Menu"}
+            aria-expanded={menuOpen}
+          >
+            <span className="menu-glyph" data-open={menuOpen} aria-hidden>
+              <i />
+              <i />
+              <i />
+            </span>
+          </button>
         </div>
+      </div>
+
+      {/* Mobile dropdown */}
+      <div className="mobile-menu" data-open={menuOpen}>
+        <nav aria-label="Mobile">
+          {NAV.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="nav-link"
+              data-active={pathname.startsWith(item.href)}
+            >
+              {ar ? item.labelAr : item.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

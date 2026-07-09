@@ -371,3 +371,49 @@ body {
   .parallax { transform: none !important; }
   .aurora b, .float, .marquee-track, .gradient-animate { animation: none !important; }
 }
+
+/* ===================================================================
+   Responsive: mobile header menu + small-screen safeguards
+   =================================================================== */
+.pill-toggle.icon-only { padding-inline: 8px; }
+.menu-btn { display: none; padding-inline: 9px; }
+.menu-glyph { position: relative; display: inline-block; inline-size: 16px; block-size: 12px; }
+.menu-glyph i { position: absolute; inset-inline-start: 0; inline-size: 16px; block-size: 2px; background: currentColor; border-radius: 2px; transition: transform 0.25s var(--ease-standard), opacity 0.2s; }
+.menu-glyph i:nth-child(1) { inset-block-start: 0; }
+.menu-glyph i:nth-child(2) { inset-block-start: 5px; }
+.menu-glyph i:nth-child(3) { inset-block-start: 10px; }
+.menu-glyph[data-open="true"] i:nth-child(1) { transform: translateY(5px) rotate(45deg); }
+.menu-glyph[data-open="true"] i:nth-child(2) { opacity: 0; }
+.menu-glyph[data-open="true"] i:nth-child(3) { transform: translateY(-5px) rotate(-45deg); }
+
+.mobile-menu { display: none; }
+
+@media (max-width: 760px) {
+  .nav-links { display: none; }
+  .menu-btn { display: inline-flex; }
+  .mobile-menu {
+    display: block;
+    position: absolute;
+    inset-block-start: 100%;
+    inset-inline: 0;
+    overflow: hidden;
+    max-block-size: 0;
+    background: color-mix(in srgb, var(--surface-page) 96%, transparent);
+    backdrop-filter: blur(12px);
+    border-block-end: 1px solid transparent;
+    transition: max-block-size 0.28s var(--ease-standard), border-color 0.28s;
+  }
+  .mobile-menu[data-open="true"] { max-block-size: 260px; border-block-end-color: var(--border-subtle); }
+  .mobile-menu nav { display: flex; flex-direction: column; gap: 2px; padding: var(--space-3) var(--space-6) var(--space-4); }
+  .mobile-menu .nav-link { padding: 11px 12px; font-size: var(--text-md); }
+}
+
+@media (max-width: 520px) {
+  .container { padding-inline: var(--space-4); }
+  .brand-name small { display: none; }
+  .hero-cta > * { flex: 1 1 auto; }
+}
+
+/* Wide content never breaks the page — it scrolls inside its own box. */
+.preview-stage { overflow-x: auto; }
+.prose pre { max-inline-size: 100%; }
