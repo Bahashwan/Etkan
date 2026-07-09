@@ -66,7 +66,7 @@ export default function HomePage() {
               <Reveal delay={2}>
                 <p className="hero-lead">
                   {ar
-                    ? "مكوّنات React مبنية من الصفر — عربي (RTL) وإنجليزي (LTR)، فاتح وداكن، من نسخة واحدة. بدّل من الأعلى وشاهد كل شيء ينقلب."
+                    ? "مكوّنات React مبنية يدويًا من الصفر — بالعربية (RTL) والإنجليزية (LTR)، بوضعٍ فاتح وداكن، ومن نسخة واحدة. بدّل الخيارات في الأعلى وشاهد كل شيء ينعكس."
                     : "Hand-built React components — Arabic (RTL) and English (LTR), light and dark, from a single build. Flip the toggles up top and watch everything mirror."}
                 </p>
               </Reveal>
@@ -79,7 +79,7 @@ export default function HomePage() {
                   </Link>
                   <Link href="/components">
                     <Button variant="secondary" size="lg">
-                      {ar ? "المكوّنات" : "Browse components"}
+                      {ar ? "تصفّح المكوّنات" : "Browse components"}
                     </Button>
                   </Link>
                 </div>
@@ -154,17 +154,17 @@ export default function HomePage() {
           <Reveal>
             <span className="eyebrow">{ar ? "لماذا اتقان" : "Why ETKAN"}</span>
             <h2 style={{ marginBlock: "var(--space-3) var(--space-6)", fontSize: "var(--text-3xl)", letterSpacing: "-0.02em" }}>
-              {ar ? "مبني ليكون صحيحاً في الاتجاهين" : "Built to be correct in both directions"}
+              {ar ? "مصمَّم ليعمل بإتقان في الاتجاهين" : "Built to be correct in both directions"}
             </h2>
           </Reveal>
 
           <div className="bento">
             <Reveal className="bento-cell wide" style={{ display: "grid" }}>
               <div className="feature-icon"><GlobeIcon /></div>
-              <h3 style={{ fontSize: "var(--text-xl)" }}>{ar ? "ثنائي اللغة فعلاً" : "Truly bilingual"}</h3>
+              <h3 style={{ fontSize: "var(--text-xl)" }}>{ar ? "ثنائي اللغة حقًّا" : "Truly bilingual"}</h3>
               <p className="muted" style={{ maxWidth: "48ch" }}>
                 {ar
-                  ? "خصائص CSS المنطقية فقط — لا left/right. نسخة واحدة، اتجاهان."
+                  ? "خصائص CSS المنطقية فقط — بلا left/right. نسخة واحدة تعمل في الاتجاهين."
                   : "Logical CSS properties only — never left/right. One build, both directions."}
               </p>
               <div style={{ display: "flex", gap: 16, marginBlockStart: "var(--space-4)", flexWrap: "wrap" }}>
@@ -182,30 +182,30 @@ export default function HomePage() {
             <Reveal className="bento-cell third" delay={1}>
               <div className="feature-icon"><MoonIcon /></div>
               <h3>{ar ? "فاتح وداكن" : "Light & dark"}</h3>
-              <p className="muted" style={{ margin: 0 }}>{ar ? "سمة data-theme واحدة." : "A single data-theme attribute."}</p>
+              <p className="muted" style={{ margin: 0 }}>{ar ? "بخاصية data-theme واحدة." : "A single data-theme attribute."}</p>
             </Reveal>
 
             <Reveal className="bento-cell third" delay={1}>
               <div className="feature-icon" style={{ fontSize: 20 }}><SaudiRiyal /></div>
               <h3>{ar ? "السعودية أولاً" : "Saudi-first"}</h3>
-              <p className="muted" style={{ margin: 0 }}>{ar ? "ريال، هجري، أرقام عربية." : "Riyal, Hijri, Arabic digits."}</p>
+              <p className="muted" style={{ margin: 0 }}>{ar ? "الريال، والتقويم الهجري، والأرقام العربية." : "Riyal, Hijri, Arabic digits."}</p>
             </Reveal>
 
             <Reveal className="bento-cell third" delay={2}>
               <div className="feature-icon"><BoltIcon /></div>
               <h3>{ar ? "بلا اعتماديات" : "Zero deps"}</h3>
-              <p className="muted" style={{ margin: 0 }}>{ar ? "React فقط. وحدات CSS خالص." : "React only. Pure-CSS tokens."}</p>
+              <p className="muted" style={{ margin: 0 }}>{ar ? "React فقط، ومتغيّرات تصميم بـCSS خالص." : "React only. Pure-CSS tokens."}</p>
             </Reveal>
 
             <Reveal className="bento-cell third" delay={2}>
               <div className="feature-icon"><GaugeIcon /></div>
-              <h3>{ar ? "متاح للجميع" : "Accessible"}</h3>
-              <p className="muted" style={{ margin: 0 }}>{ar ? "تركيز ظاهر، نظيف في axe." : "Visible focus, axe-clean."}</p>
+              <h3>{ar ? "سهل الوصول" : "Accessible"}</h3>
+              <p className="muted" style={{ margin: 0 }}>{ar ? "مؤشّر تركيز واضح، ونظيف في axe." : "Visible focus, axe-clean."}</p>
             </Reveal>
 
             <Reveal className="bento-cell third" delay={3}>
               <div className="feature-icon"><LayersIcon /></div>
-              <h3>{ar ? "لأي إطار" : "Any framework"}</h3>
+              <h3>{ar ? "يعمل مع أي إطار" : "Any framework"}</h3>
               <p className="muted" style={{ margin: 0 }}>{ar ? "Vue، Angular، HTML." : "Vue, Angular, HTML."}</p>
             </Reveal>
           </div>
@@ -235,7 +235,7 @@ export default function HomePage() {
                 <div style={{ padding: "var(--space-6)", background: "var(--surface-page)" }}>
                   <div className="stat-grid" style={{ marginBlockEnd: "var(--space-5)" }}>
                     {(ar
-                      ? [["الإيرادات", "٤٨٬٢٠٩"], ["الحملات", "١٢"], ["الفتح", "٩٨٫٢٪"], ["عملاء", "٣٤٠"]]
+                      ? [["الإيرادات", "٤٨٬٢٠٩"], ["الحملات", "١٢"], ["معدّل الفتح", "٩٨٫٢٪"], ["جهات الاتصال", "٣٤٠"]]
                       : [["Revenue", "48,209"], ["Campaigns", "12"], ["Open rate", "98.2%"], ["Contacts", "340"]]
                     ).map(([k, v]) => (
                       <div key={k} className="stat">
@@ -270,7 +270,7 @@ export default function HomePage() {
             <div className="stat-band" style={{ padding: "var(--space-8)", border: "1px solid var(--border-subtle)", borderRadius: "var(--radius-lg)", background: "var(--surface-card)" }}>
               <div><div className="n"><CountUp to={18} /></div><div className="k">{ar ? "مكوّناً" : "Components"}</div></div>
               <div><div className="n"><CountUp to={2} /></div><div className="k">{ar ? "حزمتان على npm" : "npm packages"}</div></div>
-              <div><div className="n"><CountUp to={4} /></div><div className="k">{ar ? "حالات (لغة×سمة)" : "states (lang × theme)"}</div></div>
+              <div><div className="n"><CountUp to={4} /></div><div className="k">{ar ? "حالات (لغة × سمة)" : "states (lang × theme)"}</div></div>
               <div><div className="n"><CountUp to={0} /></div><div className="k">{ar ? "اعتماديات" : "dependencies"}</div></div>
             </div>
           </Reveal>
@@ -295,7 +295,7 @@ export default function HomePage() {
                 {ar ? "ابدأ البناء بإتقان" : "Start building with itqan"}
               </h2>
               <p style={{ color: "rgba(255,255,255,0.88)", marginBlock: "12px var(--space-6)", maxWidth: "48ch", marginInline: "auto" }}>
-                {ar ? "ثبّت الحزمة، اقرأ الدليل، وأطلق واجهة عربية/إنجليزية في دقائق." : "Install the package, read the guide, and ship a bilingual UI in minutes."}
+                {ar ? "ثبّت الحزمة، واقرأ الدليل، وأطلِق واجهة عربية وإنجليزية في دقائق." : "Install the package, read the guide, and ship a bilingual UI in minutes."}
               </p>
               <div style={{ display: "flex", gap: 12, justifyContent: "center", flexWrap: "wrap" }}>
                 <Link href="/docs"><Button size="lg" variant="secondary">{ar ? "اقرأ الدليل" : "Read the docs"}</Button></Link>

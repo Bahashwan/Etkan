@@ -9,7 +9,7 @@ import { SunIcon, MoonIcon, GlobeIcon, GithubIcon } from "./icons";
 const GITHUB_URL = "https://github.com/Bahashwan/Etkan";
 
 const NAV = [
-  { href: "/docs", label: "Docs", labelAr: "الدليل" },
+  { href: "/docs", label: "Docs", labelAr: "التوثيق" },
   { href: "/components", label: "Components", labelAr: "المكوّنات" },
   { href: "/showroom", label: "Showroom", labelAr: "المعرض" },
 ];
@@ -55,7 +55,7 @@ export function SiteHeader() {
             className="pill-toggle"
             onClick={toggleDir}
             aria-label="Toggle language direction"
-            title={ar ? "التبديل إلى الإنجليزية" : "Switch to Arabic"}
+            title={ar ? "الانتقال إلى الإنجليزية" : "Switch to Arabic"}
           >
             <GlobeIcon width={16} height={16} />
             {ar ? "EN" : "عربي"}

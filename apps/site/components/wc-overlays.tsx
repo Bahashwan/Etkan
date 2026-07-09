@@ -89,13 +89,13 @@ export function WcOverlays() {
       style={{ opacity: ready ? 1 : 0, transition: "opacity .4s var(--ease-out)" }}
     >
       <div className="preview-title">
-        <h4>{ar ? "طبقات عائمة حيّة" : "Live overlays"}</h4>
+        <h4>{ar ? "طبقات عائمة تفاعلية" : "Live overlays"}</h4>
         <span className="terminal-title" style={{ margin: 0 }}>&lt;etkan-*&gt;</span>
       </div>
       <div className="preview-stage" style={{ flexDirection: "column", alignItems: "stretch", gap: "var(--space-5)" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center" }}>
-          <Tooltip content={ar ? "نسخ إلى الحافظة" : "Copy to clipboard"}>
-            <Button variant="ghost">{ar ? "مرّر فوقي" : "Hover me"}</Button>
+          <Tooltip content={ar ? "انسخ إلى الحافظة" : "Copy to clipboard"}>
+            <Button variant="ghost">{ar ? "مرّر المؤشر هنا" : "Hover me"}</Button>
           </Tooltip>
           <Menu ref={menuRef}>
             <Button slot="trigger" variant="secondary">
@@ -103,7 +103,7 @@ export function WcOverlays() {
             </Button>
           </Menu>
           <Button variant="primary" onClick={openDialog}>
-            {ar ? "افتح الحوار" : "Open dialog"}
+            {ar ? "افتح النافذة" : "Open dialog"}
           </Button>
           <Button variant="secondary" onClick={showToast}>
             {ar ? "أظهر التنبيه" : "Show toast"}
@@ -113,8 +113,8 @@ export function WcOverlays() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
           <Select ref={selectRef} label={ar ? "المدينة" : "City"} placeholder={ar ? "اختر مدينة" : "Choose a city"} />
           <Tabs value="profile">
-            <div {...({ label: ar ? "الملف" : "Profile", value: "profile" } as Record<string, string>)} style={{ paddingBlockStart: 12 }}>
-              {ar ? "تفاصيل ملفك." : "Your profile details."}
+            <div {...({ label: ar ? "الملف الشخصي" : "Profile", value: "profile" } as Record<string, string>)} style={{ paddingBlockStart: 12 }}>
+              {ar ? "بيانات ملفك الشخصي." : "Your profile details."}
             </div>
             <div {...({ label: ar ? "الفوترة" : "Billing", value: "billing" } as Record<string, string>)} style={{ paddingBlockStart: 12 }}>
               {ar ? "طرق الدفع." : "Payment methods."}

@@ -14,17 +14,17 @@ export default function ShowroomIndex() {
     {
       href: "/showroom/dashboard",
       icon: <GaugeIcon />,
-      title: ar ? "لوحة تحكّم" : "Dashboard",
+      title: ar ? "لوحة التحكّم" : "Dashboard",
       desc: ar
-        ? "نظرة عامة على التواصل — شريط جانبي، بطاقات إحصائية، مخطّط، وجدول فواتير."
+        ? "لمحة سريعة عن نشاطك — قائمة جانبية، بطاقات أرقام، رسم بياني، وجدول للفواتير."
         : "Outreach overview — sidebar, stat cards, a chart, and an invoices table.",
       live: true,
     },
     {
       href: "#",
       icon: <GaugeIcon />,
-      title: ar ? "متجر وفوترة" : "Commerce & billing",
-      desc: ar ? "قريباً — سلّة، دفع، وفواتير بالريال." : "Coming soon — cart, checkout, riyal invoices.",
+      title: ar ? "المتجر والفوترة" : "Commerce & billing",
+      desc: ar ? "قريباً — سلّة شراء، وإتمام الطلب، وفواتير بالريال." : "Coming soon — cart, checkout, riyal invoices.",
       live: false,
     },
   ];
@@ -33,11 +33,11 @@ export default function ShowroomIndex() {
     <div className="container section">
       <span className="eyebrow">{ar ? "المعرض" : "Showroom"}</span>
       <h1 style={{ fontSize: "var(--text-4xl)", letterSpacing: "-0.02em", marginBlock: "var(--space-3) var(--space-2)" }}>
-        {ar ? "منتجات حقيقية مبنية بإتقان" : "Real products built with ETKAN"}
+        {ar ? "منتجات حقيقية بُنيت بإتقان" : "Real products built with ETKAN"}
       </h1>
       <p className="muted" style={{ maxWidth: "60ch" }}>
         {ar
-          ? "شاشات كاملة مركّبة من مكوّنات المكتبة — عربي/إنجليزي وفاتح/داكن من نسخة واحدة."
+          ? "شاشات كاملة مبنية من مكوّنات المكتبة — بالعربية والإنجليزية، وبالوضعين الفاتح والداكن، من نسخة واحدة."
           : "Full screens assembled from the library — Arabic/English and light/dark from one build."}
       </p>
 

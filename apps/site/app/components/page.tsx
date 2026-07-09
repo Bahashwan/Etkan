@@ -23,9 +23,11 @@ import {
   Menu,
   SaudiRiyal,
 } from "@backdoor_est/etkan-ui-react";
+import Link from "next/link";
 import { useUI } from "../providers";
 import { Preview } from "@/components/preview";
-import { SendIcon, SettingsIcon, CopyIcon, GridIcon } from "@/components/icons";
+import { docList } from "@/content/components";
+import { SendIcon, SettingsIcon, CopyIcon, GridIcon, ArrowIcon } from "@/components/icons";
 
 interface Invoice {
   id: string;
@@ -48,7 +50,7 @@ export default function ComponentsPage() {
   const [page, setPage] = React.useState(2);
 
   const columns: TableColumn<Invoice>[] = [
-    { key: "id", header: ar ? "الفاتورة" : "Invoice", nowrap: true },
+    { key: "id", header: ar ? "رقم الفاتورة" : "Invoice", nowrap: true },
     { key: "client", header: ar ? "العميل" : "Client" },
     {
       key: "status",
@@ -82,11 +84,34 @@ export default function ComponentsPage() {
       </h1>
       <p className="muted" style={{ maxWidth: "60ch" }}>
         {ar
-          ? "١٨ مكوّناً حيّاً. بدّل اللغة والسمة من الأعلى لترى كلّاً منها ينقلب فوراً."
+          ? "١٨ مكوّناً حيّاً. بدّل اللغة والسمة من الأعلى، وشاهد كلّ مكوّن يتجاوب في الحال."
           : "18 live components. Flip the language and theme up top to see each one respond instantly."}
       </p>
 
-      <div style={{ display: "grid", gap: "var(--space-5)", marginBlockStart: "var(--space-6)" }}>
+      {/* Directory — each card links to a full detail page */}
+      <div
+        className="grid"
+        style={{ gridTemplateColumns: "repeat(auto-fill, minmax(210px, 1fr))", marginBlockStart: "var(--space-6)" }}
+      >
+        {docList.map((d) => (
+          <Link
+            key={d.slug}
+            href={`/components/${d.slug}`}
+            className="feature"
+            style={{ display: "block", padding: "var(--space-4) var(--space-5)" }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8 }}>
+              <strong style={{ color: "var(--text-strong)" }}>{d.name}</strong>
+              <ArrowIcon width={15} height={15} style={{ color: "var(--text-subtle)" }} />
+            </div>
+            <div className="muted" style={{ fontSize: "var(--text-sm)", marginBlockStart: 4 }}>
+              {ar ? d.title.ar : d.title.en}
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      <div style={{ display: "grid", gap: "var(--space-5)", marginBlockStart: "var(--space-8)" }}>
         <H>{ar ? "النماذج" : "Forms"}</H>
 
         <Preview title="Button">
@@ -108,9 +133,9 @@ export default function ComponentsPage() {
 
         <Preview title="Input · Textarea">
           <div style={{ display: "grid", gap: 16, width: "min(360px,100%)" }}>
-            <Input label={ar ? "البريد" : "Email"} placeholder="you@company.com" />
+            <Input label={ar ? "البريد الإلكتروني" : "Email"} placeholder="you@company.com" />
             <Input label={ar ? "المبلغ" : "Amount"} placeholder="0.00" prefix={<SaudiRiyal />} />
-            <Textarea label={ar ? "ملاحظات" : "Notes"} placeholder={ar ? "اكتب هنا…" : "Type here…"} />
+            <Textarea label={ar ? "ملاحظات" : "Notes"} placeholder={ar ? "اكتب ملاحظتك هنا…" : "Type here…"} />
           </div>
         </Preview>
 
@@ -149,9 +174,9 @@ export default function ComponentsPage() {
 
         <Preview title="Card">
           <Card style={{ width: "min(320px,100%)" }}>
-            <h3 style={{ marginBlockEnd: 8 }}>{ar ? "خطة الأعمال" : "Business plan"}</h3>
+            <h3 style={{ marginBlockEnd: 8 }}>{ar ? "باقة الأعمال" : "Business plan"}</h3>
             <p className="muted" style={{ margin: 0 }}>
-              {ar ? "كل المميزات، دعم أولوية." : "All features, priority support."}
+              {ar ? "كل المزايا، ودعمٌ يحظى بالأولوية." : "All features, priority support."}
             </p>
             <div style={{ marginBlockStart: 16, fontSize: 24, fontWeight: 700, color: "var(--text-strong)" }}>
               299 <SaudiRiyal />
@@ -173,7 +198,7 @@ export default function ComponentsPage() {
 
         <Preview title="Tooltip">
           <Tooltip content={ar ? "نسخ إلى الحافظة" : "Copy to clipboard"}>
-            <button className="pill-toggle">{ar ? "مرّر فوقي" : "Hover me"}</button>
+            <button className="pill-toggle">{ar ? "مرّر المؤشّر فوقي" : "Hover me"}</button>
           </Tooltip>
         </Preview>
 

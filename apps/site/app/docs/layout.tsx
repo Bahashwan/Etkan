@@ -9,10 +9,10 @@ const NAV = [
   {
     group: { en: "Guides", ar: "الأدلّة" },
     items: [
-      { href: "/docs", en: "Getting started", ar: "كيف تبدأ" },
-      { href: "/docs/frameworks", en: "Any framework", ar: "أي إطار" },
-      { href: "/docs/theming", en: "Theming", ar: "السمات" },
-      { href: "/docs/rtl", en: "RTL & bilingual", ar: "الاتجاه وثنائية اللغة" },
+      { href: "/docs", en: "Getting started", ar: "ابدأ من هنا" },
+      { href: "/docs/frameworks", en: "Any framework", ar: "مع أي إطار" },
+      { href: "/docs/theming", en: "Theming", ar: "السمات والألوان" },
+      { href: "/docs/rtl", en: "RTL & bilingual", ar: "الاتجاه واللغتان" },
       { href: "/docs/saudi", en: "Saudi-first", ar: "السعودية أولاً" },
     ],
   },

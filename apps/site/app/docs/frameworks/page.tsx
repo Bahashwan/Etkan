@@ -16,14 +16,14 @@ export default function FrameworksDocs() {
       <h1>{ar ? "أي إطار — مكوّنات ويب" : "Any framework — Web Components"}</h1>
       <p>
         {ar
-          ? "الحزمة @backdoor_est/etkan-ui-elements تعطيك نفس مكوّنات اتقان كعناصر ويب قياسية (Web Components). تعمل كما هي في Angular و Vue و Svelte و HTML عادي — وحتى React."
+          ? "تمنحك حزمة @backdoor_est/etkan-ui-elements مكوّنات اتقان نفسها في هيئة عناصر ويب قياسية (Web Components). تعمل كما هي في Angular وVue وSvelte وصفحات HTML العادية — بل وحتى في React."
           : "The @backdoor_est/etkan-ui-elements package gives you the same ETKAN components as standard Web Components. They work as-is in Angular, Vue, Svelte, plain HTML — and React too."}
       </p>
 
       <h2>{ar ? "معاينة حيّة" : "Live preview"}</h2>
       <p>
         {ar
-          ? "العناصر تحت هي الحزمة المنشورة نفسها تعمل داخل هذه الصفحة. بدّل اللغة والسمة من الأعلى."
+          ? "العناصر الظاهرة بالأسفل هي الحزمة المنشورة نفسها وهي تعمل داخل هذه الصفحة. جرّب تبديل اللغة والمظهر من الأعلى."
           : "The elements below are the published package running inside this page. Flip language and theme up top."}
       </p>
       <WcLive />
@@ -31,7 +31,7 @@ export default function FrameworksDocs() {
       <h2>{ar ? "طبقات عائمة" : "Overlays"}</h2>
       <p>
         {ar
-          ? "حوارات، تنبيهات، قوائم، تلميحات، تبويبات، جداول وقوائم اختيار — كلها عناصر ويب. جرّبها:"
+          ? "نوافذ حوار، وتنبيهات، وقوائم، وتلميحات، وتبويبات، وجداول، وقوائم اختيار — جميعها عناصر ويب. جرّبها:"
           : "Dialogs, toasts, menus, tooltips, tabs, tables, and selects — all Web Components. Try them:"}
       </p>
       <WcOverlays />
@@ -63,13 +63,13 @@ export default function FrameworksDocs() {
 </script>`}
       />
 
-      <h2>{ar ? "التثبيت لكل إطار" : "Install per framework"}</h2>
+      <h2>{ar ? "التثبيت في كل إطار" : "Install per framework"}</h2>
       <FrameworkTabs />
 
       <h2>{ar ? "أشرطة التنقّل والأشرطة الجانبية" : "Navbars & sidebars"}</h2>
       <p>
         {ar
-          ? "حلول تخطيط جاهزة عبر الفتحات (slots) — تنقلب للجهة الصحيحة تلقائياً في العربية."
+          ? "تخطيط جاهز عبر الفتحات (slots) — ينتقل تلقائياً إلى الجهة الصحيحة عند استخدام العربية."
           : "Ready-made layout via slots — they flip to the correct side automatically in Arabic."}
       </p>
       <CodeBlock
@@ -90,10 +90,10 @@ export default function FrameworksDocs() {
 </etkan-sidebar>`}
       />
 
-      <h2>{ar ? "الحركة كعناصر جاهزة" : "Motion as drop-in elements"}</h2>
+      <h2>{ar ? "حركات جاهزة للاستخدام المباشر" : "Motion as drop-in elements"}</h2>
       <p>
         {ar
-          ? "نفس الحركات المستخدمة في هذا الموقع، متوفّرة كعناصر تحترم prefers-reduced-motion."
+          ? "الحركات نفسها المستخدمة في هذا الموقع، متاحة كعناصر تراعي إعداد prefers-reduced-motion."
           : "The same animations used across this site, available as elements that honor prefers-reduced-motion."}
       </p>
       <CodeBlock
@@ -122,7 +122,7 @@ export default function FrameworksDocs() {
       <h2>{ar ? "ملاحظة" : "Note"}</h2>
       <p>
         {ar
-          ? "الأنماط تأتي من وحدات التصميم (CSS) التي تعبر حدود الـ shadow DOM — فحمّل @backdoor_est/etkan-ui-tokens مرّة واحدة في صفحتك."
+          ? "تأتي الأنماط من متغيّرات التصميم في CSS، وهي تتخطّى حدود الـ shadow DOM — لذا حمّل @backdoor_est/etkan-ui-tokens مرّة واحدة في صفحتك."
           : "Styling comes from the design tokens (CSS custom properties), which pierce the shadow DOM — so load @backdoor_est/etkan-ui-tokens once on your page."}
       </p>
     </>

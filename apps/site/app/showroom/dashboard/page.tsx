@@ -70,7 +70,7 @@ export default function DashboardShowroom() {
   return (
     <div className="container section">
       <p className="muted" style={{ fontSize: "var(--text-sm)", marginBlockEnd: "var(--space-3)" }}>
-        {ar ? "معرض · لوحة تحكّم مبنية بالكامل بمكوّنات اتقان" : "Showroom · a dashboard built entirely from ETKAN components"}
+        {ar ? "معرض · لوحة تحكّم مبنية بالكامل من مكوّنات اتقان" : "Showroom · a dashboard built entirely from ETKAN components"}
       </p>
 
       {/* browser-frame mockup */}
@@ -105,7 +105,7 @@ export default function DashboardShowroom() {
             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", justifyContent: "space-between" }}>
               <div>
                 <h2 style={{ fontSize: "var(--text-2xl)", letterSpacing: "-0.02em" }}>{ar ? "نظرة عامة" : "Overview"}</h2>
-                <p className="muted" style={{ fontSize: "var(--text-sm)" }}>{ar ? "أداء التواصل هذا الشهر" : "Outreach performance this month"}</p>
+                <p className="muted" style={{ fontSize: "var(--text-sm)" }}>{ar ? "أداء حملات التواصل خلال هذا الشهر" : "Outreach performance this month"}</p>
               </div>
               <Button variant="primary" iconStart={<SendIcon width={16} height={16} />} onClick={() => setOpen(true)}>
                 {ar ? "حملة جديدة" : "New campaign"}
@@ -138,7 +138,7 @@ export default function DashboardShowroom() {
                   <Switch label={ar ? "البريد الإلكتروني" : "Email"} defaultChecked />
                   <Switch label="WhatsApp" defaultChecked />
                   <Switch label={ar ? "رسائل SMS" : "SMS"} />
-                  <Input placeholder={ar ? "بحث في العملاء…" : "Search contacts…"} />
+                  <Input placeholder={ar ? "ابحث عن عميل…" : "Search contacts…"} />
                 </div>
               </div>
             </div>
@@ -155,7 +155,7 @@ export default function DashboardShowroom() {
         open={open}
         onClose={() => setOpen(false)}
         title={ar ? "حملة جديدة" : "New campaign"}
-        description={ar ? "أطلق تواصلاً عبر البريد أو واتساب." : "Launch outreach over email or WhatsApp."}
+        description={ar ? "ابدأ حملة تواصل عبر البريد الإلكتروني أو واتساب." : "Launch outreach over email or WhatsApp."}
         footer={
           <>
             <Button variant="ghost" onClick={() => setOpen(false)}>
@@ -183,8 +183,8 @@ export default function DashboardShowroom() {
         open={toast}
         onDismiss={() => setToast(false)}
         tone="success"
-        title={ar ? "أُطلقت الحملة" : "Campaign launched"}
-        message={ar ? "بدأ إرسال الرسائل الآن." : "Messages are going out now."}
+        title={ar ? "تم إطلاق الحملة" : "Campaign launched"}
+        message={ar ? "الرسائل قيد الإرسال الآن." : "Messages are going out now."}
       />
     </div>
   );

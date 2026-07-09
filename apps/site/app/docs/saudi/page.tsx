@@ -30,13 +30,13 @@ export default function SaudiDocs() {
       <h1>{ar ? "السعودية أولاً" : "Saudi-first"}</h1>
       <p>
         {ar
-          ? "أدوات مبنية على واجهات Intl في المنصّة — دون أي مكتبات ترجمة أو تواريخ: رمز الريال الرسمي، تواريخ أم القرى، والأرقام العربية الهندية."
+          ? "أدوات تعتمد على واجهات Intl المدمجة في المنصّة، دون أي مكتبات خارجية للترجمة أو التواريخ: رمز الريال الرسمي، وتقويم أم القرى، والأرقام العربية الهندية."
           : "Utilities built on the platform Intl APIs — with zero i18n or date libraries: the official riyal symbol, Umm al-Qura dates, and Arabic-Indic digits."}
       </p>
 
       <h2>{ar ? "رمز الريال" : "The riyal symbol"}</h2>
       <Preview
-        title={ar ? "يرث اللون والحجم من النص" : "Inherits text color & size"}
+        title={ar ? "يأخذ لونه وحجمه من النص المحيط به" : "Inherits text color & size"}
         code={`import { SaudiRiyal } from "@backdoor_est/etkan-ui-react";
 
 <span>1,250.50 <SaudiRiyal /></span>`}
@@ -49,7 +49,7 @@ export default function SaudiDocs() {
       </Preview>
 
       <h2>{ar ? "التنسيق" : "Formatting"}</h2>
-      <Preview title={ar ? "دوال Intl جاهزة" : "Ready-made Intl helpers"}>
+      <Preview title={ar ? "دوال جاهزة مبنية على Intl" : "Ready-made Intl helpers"}>
         <div style={{ width: "min(460px,100%)" }}>
           <Row label='formatSAR(1250.5)' value={formatSAR(1250.5)} />
           <Row label='formatSAR(1250.5, {locale:"en-SA"})' value={formatSAR(1250.5, { locale: "en-SA" })} />

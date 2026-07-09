@@ -43,14 +43,14 @@ export function WcLive() {
       style={{ opacity: ready ? 1 : 0, transition: "opacity .4s var(--ease-out)" }}
     >
       <div className="preview-title">
-        <h4>{ar ? "مكوّنات ويب حيّة — نفس الحزمة المنشورة" : "Live Web Components — the published package"}</h4>
+        <h4>{ar ? "مكوّنات ويب حيّة — من الحزمة المنشورة نفسها" : "Live Web Components — the published package"}</h4>
         <span className="terminal-title" style={{ margin: 0 }}>&lt;etkan-*&gt;</span>
       </div>
       <div className="preview-stage" style={{ flexDirection: "column", alignItems: "stretch", gap: "var(--space-5)" }}>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center" }}>
           <Button variant="primary">{ar ? "حفظ" : "Save"}</Button>
           <Button variant="secondary">{ar ? "إلغاء" : "Cancel"}</Button>
-          <Button variant="accent">{ar ? "تمييز" : "Accent"}</Button>
+          <Button variant="accent">{ar ? "مميّز" : "Accent"}</Button>
           <Button variant="danger">{ar ? "حذف" : "Delete"}</Button>
         </div>
         <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center" }}>
@@ -64,7 +64,7 @@ export function WcLive() {
           </span>
         </div>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
-          <Input label={ar ? "البريد" : "Email"} placeholder="you@company.com"></Input>
+          <Input label={ar ? "البريد الإلكتروني" : "Email"} placeholder="you@company.com"></Input>
           <div style={{ display: "flex", alignItems: "center" }}>
             <Switch label={ar ? "تفعيل الإشعارات" : "Enable notifications"} checked></Switch>
           </div>
@@ -72,7 +72,7 @@ export function WcLive() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 16 }}>
           <Stat label={ar ? "الإيرادات" : "Revenue"} value="48,209" delta="+12%" tone="success"></Stat>
           <Alert tone="success" heading={ar ? "تم الحفظ" : "Saved"} dismissible>
-            {ar ? "تم تحديث إعداداتك." : "Your settings were updated."}
+            {ar ? "حدّثنا إعداداتك بنجاح." : "Your settings were updated."}
           </Alert>
         </div>
         <div style={{ display: "flex", gap: 20, alignItems: "center", flexWrap: "wrap" }}>
