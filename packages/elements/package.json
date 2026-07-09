@@ -1,6 +1,6 @@
 {
   "name": "@backdoor_est/etkan-ui-elements",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "ETKAN UI — اتقان · framework-agnostic Web Components (Lit). Bilingual (AR RTL / EN LTR), light/dark. Works in Angular, Vue, Svelte, plain HTML, and React.",
   "license": "MIT",
   "keywords": [

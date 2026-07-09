@@ -26,9 +26,22 @@ export { EtkanPagination } from "./components/pagination";
 export { EtkanStatCard } from "./components/stat-card";
 export { EtkanPrice } from "./components/price";
 
+// Form controls (overlay)
+export { EtkanSelect } from "./components/select";
+
+// Navigation
+export { EtkanTabs } from "./components/tabs";
+export { EtkanMenu } from "./components/menu";
+
 // Feedback
 export { EtkanAlert } from "./components/alert";
 export { EtkanSpinner } from "./components/spinner";
+export { EtkanDialog } from "./components/dialog";
+export { EtkanToast } from "./components/toast";
+export { EtkanTooltip } from "./components/tooltip";
+
+// Data display (overlay-capable)
+export { EtkanTable } from "./components/table";
 
 // Ready-made solutions
 export { EtkanLoginCard } from "./components/login-card";
