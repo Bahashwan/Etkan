@@ -114,15 +114,17 @@ export function Switch({
               ? "translateY(-50%) translateX(calc((var(--sw-w) - var(--sw-knob) - 4px) * var(--sw-dir)))"
               : "translateY(-50%)",
             transition: "transform var(--duration-base) var(--ease-out)",
-            // logical travel distance + direction sign (flipped under RTL below)
+            // logical travel distance; direction sign is set via the stylesheet
+            // below so the RTL rule can override it (an inline --sw-dir would win
+            // over the stylesheet and break the flip).
             ["--sw-w" as string]: s.w,
             ["--sw-knob" as string]: s.knob,
-            ["--sw-dir" as string]: "1",
           }}
         />
       </span>
       {label != null && <span>{label}</span>}
       <style>{`
+        ${sel} ~ span { --sw-dir: 1; }
         [dir="rtl"] ${sel} ~ span { --sw-dir: -1; }
         span:has(> ${sel}:focus-visible) {
           box-shadow: var(--focus-ring);
