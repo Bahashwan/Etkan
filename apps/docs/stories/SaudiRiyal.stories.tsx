@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { SaudiRiyal } from "@backdoor/etkan-ui-react";
+import { SaudiRiyal } from "@backdoor_est/etkan-ui-react";
 
 const meta: Meta<typeof SaudiRiyal> = {
   title: "Saudi/Riyal Symbol",

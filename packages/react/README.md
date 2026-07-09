@@ -1,19 +1,19 @@
-# @backdoor/etkan-ui-react
+# @backdoor_est/etkan-ui-react
 
 ETKAN UI — اتقان React components. Bilingual (Arabic RTL + English LTR), light/dark,
-built on `@backdoor/etkan-ui-tokens`.
+built on `@backdoor_est/etkan-ui-tokens`.
 
 ## Install
 
 ```sh
-npm i @backdoor/etkan-ui-react @backdoor/etkan-ui-tokens
+npm i @backdoor_est/etkan-ui-react @backdoor_est/etkan-ui-tokens
 ```
 
 ## Usage
 
 ```tsx
-import "@backdoor/etkan-ui-tokens"; // once, in your app entry / root layout
-import { Button } from "@backdoor/etkan-ui-react";
+import "@backdoor_est/etkan-ui-tokens"; // once, in your app entry / root layout
+import { Button } from "@backdoor_est/etkan-ui-react";
 
 export default function App() {
   return <Button variant="primary">Start free</Button>;

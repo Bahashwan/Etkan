@@ -18,7 +18,7 @@
     "lint": "oxlint packages apps",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "docs": "npm run storybook --workspace @backdoor/etkan-ui-docs",
+    "docs": "npm run storybook --workspace @backdoor_est/etkan-ui-docs",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "npm run build && changeset publish"

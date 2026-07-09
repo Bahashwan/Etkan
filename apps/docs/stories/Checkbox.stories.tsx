@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Checkbox } from "@backdoor/etkan-ui-react";
+import { Checkbox } from "@backdoor_est/etkan-ui-react";
 
 const meta: Meta<typeof Checkbox> = {
   title: "Forms/Checkbox",

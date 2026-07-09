@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Radio } from "@backdoor/etkan-ui-react";
+import { Radio } from "@backdoor_est/etkan-ui-react";
 
 const meta: Meta<typeof Radio> = {
   title: "Forms/Radio",

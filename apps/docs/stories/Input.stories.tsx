@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input, SaudiRiyal } from "@backdoor/etkan-ui-react";
+import { Input, SaudiRiyal } from "@backdoor_est/etkan-ui-react";
 
 const meta: Meta<typeof Input> = {
   title: "Forms/Input",

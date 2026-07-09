@@ -73,6 +73,6 @@ stays zero-dependency.
 
 ## Cross-framework (decision pending)
 
-`@backdoor/etkan-ui-vue` / `@backdoor/etkan-ui-angular` or a `@backdoor/etkan-ui-web-components` core —
+`@backdoor_est/etkan-ui-vue` / `@backdoor_est/etkan-ui-angular` or a `@backdoor_est/etkan-ui-web-components` core —
 tokens are already framework-agnostic; the component layer decision comes after
 the React kit stabilizes.

@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Menu } from "@backdoor/etkan-ui-react";
+import { Menu } from "@backdoor_est/etkan-ui-react";
 
 const items = [
   { label: "Edit", shortcut: "E", onClick: () => {} },

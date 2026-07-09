@@ -5,5 +5,5 @@
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["@backdoor/etkan-ui-docs"]
+  "ignore": ["@backdoor_est/etkan-ui-docs"]
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@backdoor/etkan-ui-tokens",
+  "name": "@backdoor_est/etkan-ui-tokens",
   "version": "0.1.0",
   "description": "ETKAN UI — اتقان · design tokens (CSS custom properties). Framework-agnostic: works with React, Next.js, Vue, Angular, or plain HTML.",
   "license": "MIT",
