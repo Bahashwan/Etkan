@@ -1,0 +1,43 @@
+{
+  "name": "etkan-ui",
+  "private": true,
+  "version": "0.0.0",
+  "description": "ETKAN UI — اتقان · bilingual (AR RTL / EN LTR) design system monorepo",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "oxlint packages apps",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "docs": "npm run storybook --workspace @etkan-ui/docs",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "npm run build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "jest-axe": "^9.0.0",
+    "jsdom": "^25.0.1",
+    "oxlint": "^0.15.0",
+    "prettier": "^3.4.2",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.3.5",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  }
+}

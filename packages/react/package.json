@@ -1,0 +1,45 @@
+{
+  "name": "@etkan-ui/react",
+  "version": "0.0.0",
+  "description": "ETKAN UI — اتقان · bilingual (AR RTL / EN LTR), light/dark React component kit.",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "components",
+    "ui-kit",
+    "design-system",
+    "rtl",
+    "arabic",
+    "dark-mode",
+    "etkan"
+  ],
+  "sideEffects": false,
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "devDependencies": {
+    "@types/jest-axe": "^3.5.9"
+  }
+}

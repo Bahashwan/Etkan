@@ -1,0 +1,11 @@
+/* ETKAN UI — Corner radius (subtle / precise personality) */
+:root {
+  --radius-none: 0;
+  --radius-xs: 3px;
+  --radius-sm: 4px;
+  --radius-md: 6px;   /* default for controls & cards */
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 16px;
+  --radius-pill: 999px;
+}

@@ -1,0 +1,23 @@
+{
+  "name": "@etkan-ui/docs",
+  "private": true,
+  "version": "0.0.0",
+  "description": "ETKAN UI — Storybook docs & visual workbench (EN/AR × light/dark).",
+  "type": "module",
+  "scripts": {
+    "storybook": "storybook dev -p 6006",
+    "build": "npm run build --workspace @etkan-ui/tokens && storybook build"
+  },
+  "dependencies": {
+    "@etkan-ui/react": "*",
+    "@etkan-ui/tokens": "*",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@storybook/react-vite": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "storybook": "^8.4.7",
+    "vite": "^6.0.5"
+  }
+}

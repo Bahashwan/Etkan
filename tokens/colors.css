@@ -1,0 +1,146 @@
+/* ETKAN UI — Color system (modern edition)
+ * Base ramps + semantic aliases. Light is the default (:root); dark overrides
+ * live under [data-theme="dark"]. Semantic aliases are what components consume —
+ * never hardcode a ramp step in a component.
+ *
+ * Palette: electric indigo/cobalt primary + warm coral accent, on cool slate neutrals.
+ * A fresh, modern SaaS feel — confident but not corporate. */
+
+:root {
+  /* ---- Neutrals (cool slate, faint blue undertone) ---- */
+  --neutral-0:   #FFFFFF;
+  --neutral-50:  #F7F8FA;
+  --neutral-100: #EFF1F5;
+  --neutral-200: #E2E5EC;
+  --neutral-300: #CDD2DD;
+  --neutral-400: #9BA3B4;
+  --neutral-500: #6C7488;
+  --neutral-600: #4C5468;
+  --neutral-700: #363D4E;
+  --neutral-800: #232838;
+  --neutral-900: #151926;
+  --neutral-950: #0C0E17;
+
+  /* ---- Primary (electric indigo / cobalt) ---- */
+  --primary-50:  #EEF1FF;
+  --primary-100: #DFE4FF;
+  --primary-200: #C4CCFF;
+  --primary-300: #9FABFF;
+  --primary-400: #7C86FA;
+  --primary-500: #5B5BF0;
+  --primary-600: #4A43E0;
+  --primary-700: #3C33C0;
+  --primary-800: #2F2A97;
+  --primary-900: #241F6E;
+
+  /* ---- Accent (warm coral) ---- */
+  --accent-50:   #FFF0EC;
+  --accent-100:  #FFDDD4;
+  --accent-200:  #FFBCA9;
+  --accent-300:  #FF9678;
+  --accent-400:  #FF7350;
+  --accent-500:  #F85A34;
+  --accent-600:  #E0421D;
+  --accent-700:  #B63315;
+  --accent-800:  #8A2711;
+
+  /* ---- Semantic hues ---- */
+  --success-50:  #E7F7EF;  --success-500: #12A150;  --success-600: #0D8442;  --success-700: #096030;
+  --warning-50:  #FFF6E5;  --warning-500: #E08A00;  --warning-600: #B86F00;  --warning-700: #895200;
+  --danger-50:   #FDECEC;  --danger-500:  #E03B3B;  --danger-600:  #C22A2A;  --danger-700:  #931D1D;
+  --info-50:     #E9F1FE;  --info-500:    #2F7EF6;  --info-600:    #1D63D0;  --info-700:    #14489B;
+
+  /* ================= SEMANTIC ALIASES (light) ================= */
+  /* Surfaces */
+  --surface-page:      var(--neutral-50);
+  --surface-card:      var(--neutral-0);
+  --surface-raised:    var(--neutral-0);
+  --surface-sunken:    var(--neutral-100);
+  --surface-inverse:   var(--neutral-900);
+  --surface-hover:     var(--neutral-100);
+  --surface-active:    var(--neutral-200);
+  --surface-overlay:   rgba(21, 25, 38, 0.48);
+
+  /* Text */
+  --text-strong:   var(--neutral-900);
+  --text-body:     var(--neutral-700);
+  --text-muted:    var(--neutral-500);
+  --text-subtle:   var(--neutral-400);
+  --text-inverse:  var(--neutral-0);
+  --text-on-primary: #FFFFFF;
+  --text-on-accent:  #FFFFFF;
+  --text-link:     var(--primary-600);
+  --text-link-hover: var(--primary-700);
+
+  /* Borders */
+  --border-subtle:  var(--neutral-200);
+  --border-default: var(--neutral-300);
+  --border-strong:  var(--neutral-400);
+  --border-focus:   var(--primary-500);
+
+  /* Brand */
+  --brand-primary:        var(--primary-500);
+  --brand-primary-hover:  var(--primary-600);
+  --brand-primary-active: var(--primary-700);
+  --brand-primary-soft:   var(--primary-50);
+  --brand-primary-soft-text: var(--primary-700);
+  --brand-accent:         var(--accent-500);
+  --brand-accent-hover:   var(--accent-600);
+  --brand-accent-soft:    var(--accent-50);
+
+  /* Semantic surface/text pairs */
+  --success-surface: var(--success-50);  --success-text: var(--success-700);  --success-solid: var(--success-500);
+  --warning-surface: var(--warning-50);  --warning-text: var(--warning-700);  --warning-solid: var(--warning-500);
+  --danger-surface:  var(--danger-50);   --danger-text:  var(--danger-700);   --danger-solid:  var(--danger-500);
+  --info-surface:    var(--info-50);     --info-text:    var(--info-700);     --info-solid:    var(--info-500);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(91, 91, 240, 0.30);
+
+  /* Brand gradient (used sparingly — hero, logo, key CTAs) */
+  --brand-gradient: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-400) 45%, var(--accent-400) 100%);
+}
+
+/* ================= DARK THEME ================= */
+[data-theme="dark"] {
+  --surface-page:      var(--neutral-950);
+  --surface-card:      #161A26;
+  --surface-raised:    #1E2331;
+  --surface-sunken:    #0F111B;
+  --surface-inverse:   var(--neutral-50);
+  --surface-hover:     rgba(255, 255, 255, 0.05);
+  --surface-active:    rgba(255, 255, 255, 0.09);
+  --surface-overlay:   rgba(0, 0, 0, 0.64);
+
+  --text-strong:   #F3F5FA;
+  --text-body:     #C6CBD9;
+  --text-muted:    #8B93A7;
+  --text-subtle:   #616A80;
+  --text-inverse:  var(--neutral-900);
+  --text-on-primary: #FFFFFF;
+  --text-on-accent:  #FFFFFF;
+  --text-link:     var(--primary-300);
+  --text-link-hover: var(--primary-200);
+
+  --border-subtle:  rgba(255, 255, 255, 0.07);
+  --border-default: rgba(255, 255, 255, 0.13);
+  --border-strong:  rgba(255, 255, 255, 0.24);
+  --border-focus:   var(--primary-400);
+
+  --brand-primary:        var(--primary-400);
+  --brand-primary-hover:  var(--primary-300);
+  --brand-primary-active: var(--primary-200);
+  --brand-primary-soft:   rgba(124, 134, 250, 0.16);
+  --brand-primary-soft-text: var(--primary-200);
+  --brand-accent:         var(--accent-400);
+  --brand-accent-hover:   var(--accent-300);
+  --brand-accent-soft:    rgba(255, 115, 80, 0.16);
+
+  --success-surface: rgba(18, 161, 80, 0.18);  --success-text: #58D68C;  --success-solid: #1CB65E;
+  --warning-surface: rgba(224, 138, 0, 0.18);  --warning-text: #F2B85A;  --warning-solid: #F0980C;
+  --danger-surface:  rgba(224, 59, 59, 0.18);   --danger-text:  #F58A8A;  --danger-solid:  #EF5350;
+  --info-surface:    rgba(47, 126, 246, 0.18);  --info-text:    #7FB0F8;  --info-solid:    #3B82F6;
+
+  --focus-ring: 0 0 0 3px rgba(124, 134, 250, 0.40);
+  --brand-gradient: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-300) 45%, var(--accent-400) 100%);
+}
