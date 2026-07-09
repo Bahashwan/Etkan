@@ -9,7 +9,7 @@ import { SunIcon, MoonIcon, GlobeIcon, GithubIcon } from "./icons";
 const GITHUB_URL = "https://github.com/Bahashwan/Etkan";
 
 const NAV = [
-  { href: "/docs", label: "Docs", labelAr: "التوثيق" },
+  { href: "/docs", label: "Docs", labelAr: "الدليل" },
   { href: "/components", label: "Components", labelAr: "المكوّنات" },
   { href: "/showroom", label: "Showroom", labelAr: "المعرض" },
 ];
