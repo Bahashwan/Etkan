@@ -1,5 +1,5 @@
 /**
- * @etkan-ui/tokens build.
+ * @backdoor/etkan-ui-tokens build.
  * The canonical token source lives at the repo root (`/tokens/*.css`) so the
  * no-build-step UI kit demos keep working. This script copies those files into
  * `css/` and generates `css/index.css` (same order as the root styles.css
@@ -45,11 +45,11 @@ for (const f of ORDER) {
 
 const index = [
   "/* ETKAN UI — اتقان · design tokens. Generated file — do not edit.",
-  "   Import this once in your app: `import \"@etkan-ui/tokens\";` (bundlers)",
+  "   Import this once in your app: `import \"@backdoor/etkan-ui-tokens\";` (bundlers)",
   "   or `<link rel=\"stylesheet\" href=\".../css/index.css\">`. */",
   ...ORDER.map((f) => `@import url("./${f}");`),
   "",
 ].join("\n");
 
 await writeFile(join(outDir, "index.css"), index, "utf8");
-console.log(`@etkan-ui/tokens: built css/ (${ORDER.length} files + index.css)`);
+console.log(`@backdoor/etkan-ui-tokens: built css/ (${ORDER.length} files + index.css)`);

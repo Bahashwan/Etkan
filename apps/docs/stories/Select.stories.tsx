@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Select } from "@etkan-ui/react";
+import { Select } from "@backdoor/etkan-ui-react";
 
 const meta: Meta<typeof Select> = {
   title: "Forms/Select",

@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { Decorator, Preview } from "@storybook/react";
 
-import "@etkan-ui/tokens";
+import "@backdoor/etkan-ui-tokens";
 
 /** Apply dir + theme to <html> so tokens/base.css sees them exactly like a real app. */
 const withDirectionAndTheme: Decorator = (Story, context) => {

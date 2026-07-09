@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Badge, SaudiRiyal, Table, type TableColumn } from "@etkan-ui/react";
+import { Badge, SaudiRiyal, Table, type TableColumn } from "@backdoor/etkan-ui-react";
 
 const meta: Meta<typeof Table> = {
   title: "Data/Table",

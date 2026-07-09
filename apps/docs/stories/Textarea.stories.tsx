@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Textarea } from "@etkan-ui/react";
+import { Textarea } from "@backdoor/etkan-ui-react";
 
 const meta: Meta<typeof Textarea> = {
   title: "Forms/Textarea",

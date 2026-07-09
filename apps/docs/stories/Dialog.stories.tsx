@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Button, Dialog } from "@etkan-ui/react";
+import { Button, Dialog } from "@backdoor/etkan-ui-react";
 
 const meta: Meta<typeof Dialog> = {
   title: "Feedback/Dialog",

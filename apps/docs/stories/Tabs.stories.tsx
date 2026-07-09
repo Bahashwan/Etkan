@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tabs } from "@etkan-ui/react";
+import { Tabs } from "@backdoor/etkan-ui-react";
 
 const items = [
   { value: "overview", label: "Overview", content: "Project overview and key metrics." },

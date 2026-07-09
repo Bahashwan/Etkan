@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tag } from "@etkan-ui/react";
+import { Tag } from "@backdoor/etkan-ui-react";
 
 const meta: Meta<typeof Tag> = {
   title: "Data/Tag",

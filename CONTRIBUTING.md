@@ -9,8 +9,8 @@ owning "specialist role" and a gate that must pass before the next stage.
 ```
 ├─ tokens/               ← canonical CSS token source
 ├─ packages/
-│  ├─ tokens/            ← @etkan-ui/tokens   (published · pure CSS · framework-agnostic)
-│  └─ react/             ← @etkan-ui/react    (published · TS · ESM+CJS+types)
+│  ├─ tokens/            ← @backdoor/etkan-ui-tokens   (published · pure CSS · framework-agnostic)
+│  └─ react/             ← @backdoor/etkan-ui-react    (published · TS · ESM+CJS+types)
 ├─ apps/
 │  └─ docs/              ← Storybook workbench (private · EN/AR × light/dark toolbars)
 ├─ .changeset/           ← release notes & versioning (Changesets)
@@ -18,8 +18,8 @@ owning "specialist role" and a gate that must pass before the next stage.
 ```
 
 **Future packages (slots reserved, do not create until decided):**
-`@etkan-ui/icons` (SVG set), `@etkan-ui/motion` (animation primitives/presets),
-`@etkan-ui/vue` / `@etkan-ui/angular` or `@etkan-ui/web-components` (cross-framework layer —
+`@backdoor/etkan-ui-icons` (SVG set), `@backdoor/etkan-ui-motion` (animation primitives/presets),
+`@backdoor/etkan-ui-vue` / `@backdoor/etkan-ui-angular` or `@backdoor/etkan-ui-web-components` (cross-framework layer —
 architecture decision pending, see §Roadmap).
 
 ## The team roles & their gates
@@ -57,7 +57,7 @@ npm run docs           # Storybook on :6006 with EN/AR × light/dark toolbars
 3. **Test** — `<Name>.test.tsx`: behavior tests + an AR/RTL render + `axe` in both directions.
 4. **Story** — `apps/docs/stories/<Name>.stories.tsx`: Playground + AllVariants + Arabic.
 5. **Export** — add to `packages/react/src/index.ts`.
-6. **Changeset** — `npm run changeset` → pick `@etkan-ui/react`, usually `minor` (new component).
+6. **Changeset** — `npm run changeset` → pick `@backdoor/etkan-ui-react`, usually `minor` (new component).
 7. **PR** — CI runs build/lint/typecheck/test/format on every PR; merge when green.
 
 Migration queue (from `components/`): ~~Button~~ ✅ · IconButton · Input · Textarea · Select ·
@@ -71,7 +71,7 @@ Releases are automated with [Changesets](https://github.com/changesets/changeset
 1. Every meaningful PR includes a changeset file (`npm run changeset`).
 2. On merge to `main`, the **Release** workflow opens/updates a "Version Packages" PR that
    bumps versions + writes CHANGELOGs.
-3. Merging that PR publishes `@etkan-ui/tokens` and `@etkan-ui/react` to npm (public access).
+3. Merging that PR publishes `@backdoor/etkan-ui-tokens` and `@backdoor/etkan-ui-react` to npm (public access).
 
 **One-time setup before the first release:**
 - Create the free npm org **`etkan-ui`** (or rename the scope in both `package.json` files).
@@ -83,9 +83,9 @@ Versioning: stay on `0.x` until the full component set is migrated; `npm run cha
 
 ## Framework support policy
 
-- **`@etkan-ui/tokens` is framework-agnostic today** — pure CSS; usable from Vue, Angular,
+- **`@backdoor/etkan-ui-tokens` is framework-agnostic today** — pure CSS; usable from Vue, Angular,
   Svelte, or plain HTML immediately.
-- **`@etkan-ui/react`** targets React 18/19; ESM + CJS + types; ships `"use client"` so it
+- **`@backdoor/etkan-ui-react`** targets React 18/19; ESM + CJS + types; ships `"use client"` so it
   drops into Next.js App Router server trees; works with Vite, Remix, CRA, etc.
 - **Vue / Angular components** are a deliberate later addition (see Roadmap) — the options are
   per-framework packages vs. a shared Web-Components core with thin wrappers. Decide before
@@ -94,12 +94,12 @@ Versioning: stay on `0.x` until the full component set is migrated; `npm run cha
 ## Roadmap (agreed direction)
 
 - [x] Pipeline: monorepo, build, tests, lint, Storybook, Changesets, CI/CD
-- [ ] Migrate all 19 legacy components to `@etkan-ui/react`
+- [ ] Migrate all 19 legacy components to `@backdoor/etkan-ui-react`
 - [ ] **Motion layer** — richer element motions (entrances, staggered lists, micro-interactions)
       as tokens + presets, always `prefers-reduced-motion`-safe
 - [ ] **Expand the kit beyond the base set** — e.g. Avatar, Breadcrumbs, Skeleton, Progress,
       Slider, DatePicker (with Hijri consideration), Command palette, Drawer/Sheet, Popover,
       Accordion, Stepper, EmptyState, Stat/KPI, FileUpload, Combobox
-- [ ] `@etkan-ui/icons` package (line icons, 1.75px, RTL-mirroring built in)
+- [ ] `@backdoor/etkan-ui-icons` package (line icons, 1.75px, RTL-mirroring built in)
 - [ ] Visual regression testing (Chromatic or Playwright screenshots, 4 states per story)
 - [ ] Cross-framework layer (Vue/Angular) — **pending explicit decision**

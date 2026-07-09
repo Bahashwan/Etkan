@@ -1,4 +1,4 @@
-# @etkan-ui/tokens
+# @backdoor/etkan-ui-tokens
 
 ETKAN UI — اتقان design tokens as CSS custom properties. **Framework-agnostic** — this package
 is plain CSS and works identically in React, Next.js, Vue, Angular, Svelte, or a static page.
@@ -7,7 +7,7 @@ is plain CSS and works identically in React, Next.js, Vue, Angular, Svelte, or a
 
 ```js
 // with a bundler (Vite, Next.js, webpack, Angular CLI, Nuxt…)
-import "@etkan-ui/tokens";
+import "@backdoor/etkan-ui-tokens";
 ```
 
 Then control language direction and theme on `<html>`:

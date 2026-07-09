@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Badge, SaudiRiyal } from "@etkan-ui/react";
+import { Badge, SaudiRiyal } from "@backdoor/etkan-ui-react";
 
 const meta: Meta<typeof Badge> = {
   title: "Data/Badge",

@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { IconButton } from "@etkan-ui/react";
+import { IconButton } from "@backdoor/etkan-ui-react";
 
 const Plus = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true">

@@ -1,11 +1,22 @@
 {
-  "name": "@etkan-ui/tokens",
-  "version": "0.0.0",
+  "name": "@backdoor/etkan-ui-tokens",
+  "version": "0.1.0",
   "description": "ETKAN UI — اتقان · design tokens (CSS custom properties). Framework-agnostic: works with React, Next.js, Vue, Angular, or plain HTML.",
   "license": "MIT",
-  "keywords": ["design-tokens", "css", "rtl", "arabic", "bilingual", "dark-mode", "etkan"],
+  "keywords": [
+    "design-tokens",
+    "css",
+    "rtl",
+    "arabic",
+    "bilingual",
+    "dark-mode",
+    "etkan"
+  ],
   "sideEffects": true,
-  "files": ["css", "README.md"],
+  "files": [
+    "css",
+    "README.md"
+  ],
   "exports": {
     ".": "./css/index.css",
     "./css/*": "./css/*"
