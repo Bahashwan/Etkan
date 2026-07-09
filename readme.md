@@ -1,183 +1,241 @@
-# ETKAN UI — اتقان · Design System
+<div align="center">
 
-A bilingual (Arabic RTL + English LTR), light/dark design system and open UI kit for a family
-of SaaS products. Built from scratch — no external codebase, Figma, or brand assets were
-provided. Intended to be released for free public use as **ETKAN UI**.
+# ETKAN UI · اتقان
 
-**Owners / consumers:** Mohanad Bahashwan, Backdoor, Ba-Tech.
-**Products it serves (v1):** auto Email + WhatsApp outreach, auto SMM content generator,
-appointment system + CRM, restaurant inventory tracking — and more to come.
+**A bilingual (Arabic RTL / English LTR), light &amp; dark React design system — built for Saudi products.**
 
-> **Sources:** none attached. All tokens, type, color, logo and components are original
-> decisions for this system. If licensed brand fonts or brand colors exist, share them to
-> replace the current choices.
+[![npm](https://img.shields.io/npm/v/@backdoor_est/etkan-ui-react.svg?label=%40backdoor_est%2Fetkan-ui-react)](https://www.npmjs.com/package/@backdoor_est/etkan-ui-react)
+[![license](https://img.shields.io/badge/license-MIT-black.svg)](./LICENSE)
+[![types](https://img.shields.io/badge/types-included-blue.svg)](#)
 
-اتقان ("itqan") means *mastery / doing things with excellence*. The system is precise, modern
-and confident — electric indigo, a warm coral spark, cool slate neutrals, tight radii.
+**English** · [العربية](#العربية)
+
+</div>
 
 ---
 
-## 1. Brand mark
-An **original ETKAN logo** was created (no external mark was provided to copy):
-- `assets/etkan-mark.svg` — the app-icon: a geometric **"E" monogram** (spine + three rounded
-  bars) reversed out of a rounded-square tile filled with the brand gradient. Works on any
-  background.
-- `assets/etkan-logo-en.svg` — horizontal lockup: mark + **ETKAN** wordmark.
-- `assets/etkan-logo-ar.svg` — RTL lockup: mark + **اتقان** wordmark (mark on the right).
+*اتقان* (**itqan**) means *mastery — doing things with excellence*. ETKAN UI is a from-scratch
+component kit with no UI-framework dependency: every visual comes from its own design tokens and
+hand-built primitives. One build serves Arabic and English, light and dark, at the same time.
 
-The wordmark is set in the system font (IBM Plex). Minimum clear space ≈ the height of the
-mark's inner bar; don't recolor the gradient tile or stretch the mark.
+## Highlights
 
----
+- **Truly bilingual.** Components use CSS *logical properties* only (`padding-inline`,
+  `inset-inline-start`) — never `left`/`right` — so switching `dir` flips the entire UI with no
+  extra code. Tested in both directions.
+- **Light &amp; dark.** A single build; the theme is a `data-theme` attribute on `<html>`.
+- **Saudi-first.** The official Saudi Riyal symbol, Hijri (Umm al-Qura) dates, Arabic-Indic
+  digits, and `ar-SA` number/currency formatting — all via the platform `Intl` APIs, **zero i18n
+  or date libraries**.
+- **No runtime dependencies.** React is the only peer dependency. Tokens are pure CSS.
+- **Ships everything.** ESM + CJS + TypeScript types, and `"use client"` for the Next.js App
+  Router.
+- **Accessible.** Visible `:focus-visible` states and axe-clean components in both directions.
 
-## 2. Bilingual / RTL strategy
-- Consumers set `dir="rtl"` or `dir="ltr"` and `data-theme="light|dark"` on `<html>`.
-- **One build serves both directions.** Components use CSS *logical properties*
-  (`padding-inline`, `inset-inline-start`, `margin-inline`) — never `left`/`right`.
-- Arabic gets a taller line-height and zero letter-spacing (enforced in `tokens/base.css`).
-- Directional icons (arrows/chevrons) flip under RTL via the `.etkan-mirror` class.
-- Type is unified: **IBM Plex Sans Arabic** covers both scripts; **IBM Plex Sans** is the
-  Latin twin; **IBM Plex Mono** for code/data.
-- Every UI kit ships with a live **language + theme toggle** so you can preview all four
-  states (EN/AR × light/dark).
+## Packages
 
-## 3. Theming
-- **Light** = `:root`. **Dark** = `[data-theme="dark"]` overrides.
-- Components consume **semantic aliases only** (`--surface-card`, `--text-strong`,
-  `--brand-primary`, `--border-default`, …), never raw ramp steps — so both themes and any
-  future rebrand flow through the aliases.
+| Package | What it is |
+| --- | --- |
+| [`@backdoor_est/etkan-ui-tokens`](./packages/tokens) | Design tokens as CSS custom properties. Framework-agnostic — works in React, Vue, Angular, Svelte, or a plain HTML page. |
+| [`@backdoor_est/etkan-ui-react`](./packages/react) | The React component library (18 components + Saudi-first utilities). |
 
----
+## Install
 
-## 4. CONTENT FUNDAMENTALS — how ETKAN writes
-**Voice:** clear, confident, warm — a capable partner, not a hype machine. We lead with the
-outcome ("Automate outreach. Grow with itqan."), not the mechanism.
+```sh
+npm install @backdoor_est/etkan-ui-react @backdoor_est/etkan-ui-tokens
+```
 
-- **Person:** address the user as **you**; ETKAN refers to itself as **we/ETKAN**. Arabic uses
-  the neutral imperative ("ابدأ", "جهّز") — friendly, not stiff.
-- **Casing (EN):** Sentence case for headings, labels, and buttons ("New campaign", "Save
-  changes") — **not** Title Case. ALL-CAPS only for tiny overline labels/table headers, with
-  letter-spacing. Never caps a whole word of Arabic (Arabic has no case).
-- **Buttons are verbs:** "Start free", "Create campaign", "Book a demo", "Save changes".
-- **Numbers:** Western digits in EN (48,209 · 98.2%), Arabic-Indic in AR (٤٨٬٢٠٩ · ٩٨٫٢٪).
-  Currency shows the riyal symbol ﷼ / ر.س. Use tabular figures in tables.
-- **Bilingual pairing:** in specimens and mixed contexts we pair terms with a middot —
-  "Email · البريد", "Sent · تم الإرسال" — but production copy is single-language per `dir`.
-- **Tone examples:** empty/first-run is encouraging ("Start automating outreach in minutes.");
-  success is concrete ("1,204 contacts reached."); errors are plain and fixable ("Check your
-  WhatsApp connection.").
-- **Emoji:** not used in product UI. Status is carried by color + icon + a dot, never a 😀.
-- **No jargon, no exclamation spam.** One idea per line; short sentences; `text-wrap: pretty`.
+Requires React 18 or 19.
 
----
+## Quick start
 
-## 5. VISUAL FOUNDATIONS
-**Color vibe.** Electric **indigo/cobalt** primary (`#5B5BF0`) for action and focus; a warm
-**coral** accent (`#F85A34`) as the spark, used sparingly (highlights, one CTA, the gradient
-tail). Neutrals are **cool slate** with a faint blue undertone — modern, not warm-beige.
-Semantic colors (success green, warning amber, danger red, info blue) each ship as a soft
-surface + readable text + solid trio, retuned for dark.
+```tsx
+import "@backdoor_est/etkan-ui-tokens";           // once, at your app root
+import { Button, Input } from "@backdoor_est/etkan-ui-react";
 
-**Gradient.** A single brand gradient `--brand-gradient` (indigo → light indigo → coral, 135°)
-appears only in signature moments: the logo tile, the auth side-panel, the pricing CTA band,
-avatar chips, and gradient text on the hero's second line. It is never a page background and
-never sits behind body text.
+export default function App() {
+  return (
+    <form>
+      <Input label="Email" placeholder="you@company.com" />
+      <Button variant="primary">Start free</Button>
+    </form>
+  );
+}
+```
 
-**Type.** IBM Plex family throughout. Display/headings 600–700 with tight tracking
-(`-0.02em`); body 400–500 at 14px default; mono for numbers/IDs/code. Arabic never gets
-letter-spacing and rides a taller line-height.
+Set the language direction and theme once, on `<html>` — the same components render correctly in
+all four states:
 
-**Spacing & layout.** 4px base grid (`--space-*`). Comfortable density: 40px default control
-height, 12–16px card padding steps, 24px screen gutters. App shells use a 264px sidebar; content
-maxes out around 1100–1140px. Layout is built with fl/grid + `gap`, not margins.
+```html
+<html dir="rtl" data-theme="dark">   <!-- dir: "ltr" | "rtl"  ·  data-theme: "light" | "dark" -->
+```
 
-**Corner radii.** Subtle and precise: 6px for controls & most cards (`--radius-md`), 8–12px for
-larger cards/dialogs, `999px` pills for tabs/badges/tags. Nothing is heavily rounded.
+## Saudi-first utilities
 
-**Borders over shadows.** The system is **border-led**. Cards are a 1px `--border-subtle` hairline
-on `--surface-card` with a barely-there `--shadow-sm`; elevation climbs only for menus (`lg`),
-dialogs (`xl`), and hover on interactive cards (`md` + 1px lift). In dark mode shadows nearly
-vanish and borders carry structure. No coloured left-border accent cards.
+```tsx
+import { SaudiRiyal, formatSAR, formatHijri, toArabicDigits } from "@backdoor_est/etkan-ui-react";
 
-**Backgrounds.** Flat surfaces — no photographic hero images, no textures, no patterns. The only
-"decoration" is soft radial gradient glows (very low opacity) behind the marketing hero and two
-translucent circles on the auth panel. Everything else is solid tokens.
+<span>1,250.50 <SaudiRiyal /></span>            // official riyal glyph, inherits text color & size
 
-**Hover / press.** Hover = a step-darker brand color (or `--surface-hover` for subtle controls);
-never opacity fades on solid buttons. Press = a 0.99 scale + 0.5px nudge on buttons — quick and
-mechanical, no bounce. Interactive cards lift 1px and deepen shadow.
+formatSAR(1250.5);                              // "١٬٢٥٠٫٥٠ ر.س.‏"   (ar-SA)
+formatSAR(1250.5, { locale: "en-SA" });         // "SAR 1,250.50"
+formatHijri(new Date());                        // "٢٤ محرم ١٤٤٧ هـ"  (Umm al-Qura)
+toArabicDigits("2025");                         // "٢٠٢٥"
+```
 
-**Motion.** Fast and purposeful: 140ms for state, 200ms for entrances, ease-out
-`cubic-bezier(0.16,1,0.3,1)`. Dialogs fade + rise 8px; menus/tooltips fade in; toasts rise.
-No infinite loops, no spring/bounce. All motion respects `prefers-reduced-motion`.
+## Components
 
-**Transparency & blur.** Used only where it earns its keep: sticky marketing nav uses
-`backdrop-filter: blur` over a `color-mix` translucent surface; the dialog overlay is a 2px
-blur over a scrim. Not used on cards or content.
+- **Forms** — Button · IconButton · Input · Textarea · Select · Checkbox · Radio · Switch
+- **Data** — Card · Badge · Tag · Table · Pagination
+- **Feedback** — Tooltip · Toast · Dialog
+- **Navigation** — Tabs · Menu
 
-**Focus.** A 3px brand-tinted ring (`--focus-ring`) on `:focus-visible`, plus border-color
-shift on fields. Always visible, never removed.
+## Design principles
 
-**Imagery.** No stock photography in v1. Where a photo/logo would go (contact avatars, user
-chips) we use a monogram on a soft brand tile or the gradient. Icons are line-drawn (see below).
+- **Border-led, not shadow-heavy.** Structure comes from a 1px hairline on a card surface; shadows
+  are reserved for menus, dialogs, and hover.
+- **One accent, used sparingly.** Electric indigo drives action and focus; a warm coral accent is
+  the spark.
+- **IBM Plex** type throughout — Arabic rides a taller line-height and never gets letter-spacing.
+- **A 4px spacing grid** and subtle, precise corner radii.
+- **Motion is fast and purposeful** (140–200ms, ease-out) and respects `prefers-reduced-motion`.
 
----
+## Documentation
 
-## 6. ICONOGRAPHY
-- **Style:** line icons, **1.75px** stroke, rounded caps and joins, 24px grid — matching the
-  precise, modern brand. No filled/duotone icons in v1.
-- **Source:** no icon font or SVGs were provided. A small **local set** ships in
-  `ui_kits/_shared/icon.js` (`window.EtkanIcon` — ~35 Lucide-style glyphs) so kits render
-  offline with zero CDN dependency. **These are Lucide-compatible outlines**; for a fuller set,
-  drop in [Lucide](https://lucide.dev) (same weight/style) — flagged as the recommended CDN.
-- **RTL:** directional glyphs (chevrons, arrows, send) carry `.etkan-mirror` so they flip with
-  direction.
-- **Usage:** icons pair with text or carry an accessible `label` (see IconButton). Status is
-  color + icon + dot. **Emoji and unicode dingbats are not used as icons.**
-- **Brand/product glyphs:** each product in the suite has a lead icon — Outreach `send`,
-  SMM `sparkles`, Appointments `calendar`, Inventory `box`.
+Every component has a Storybook story in English and Arabic × light and dark. Run it locally:
+
+```sh
+npm install
+npm run docs        # opens Storybook at http://localhost:6006
+```
+
+## Repository
+
+A workspaces monorepo:
+
+```
+packages/tokens   →  @backdoor_est/etkan-ui-tokens   (CSS custom properties)
+packages/react    →  @backdoor_est/etkan-ui-react     (components + Saudi utilities)
+apps/docs         →  Storybook (EN/AR × light/dark)
+tokens/           →  the canonical token source
+```
+
+## License
+
+[MIT](./LICENSE) © Mohanad Bahashwan
+
+<br />
 
 ---
 
-## 7. Components (index)
-Reusable primitives under `components/<group>/` — each `<Name>.jsx` + `<Name>.d.ts` +
-`<Name>.prompt.md`, mounted via `const { <Name> } = window.ETKANUIDesignSystem_c3478d`.
+<div align="center" dir="rtl">
 
-- **forms/** — Button · IconButton · Input · Textarea · Select · Checkbox · Radio · Switch
-- **data/** — Card · Badge · Tag · Table · Pagination
-- **navigation/** — Tabs · Menu
-- **feedback/** — Dialog · Toast (+ ToastViewport) · Tooltip
+# العربية
 
-### Intentional additions
-- **IconButton** — icon-only companion to Button (toolbars, table rows).
-- **Textarea** — multi-line sibling of Input.
-- **ToastViewport** — fixed, RTL-aware container that stacks Toasts.
+**نظام تصميم لواجهات React — ثنائي اللغة (عربي من اليمين / إنجليزي من اليسار)، فاتح وداكن، مبني لمنتجات سعودية.**
 
-## 8. UI kits (index)
-Full-screen, interactive product recreations under `ui_kits/<product>/` — each is
-`index.html` + `app.js` (plain-JS React, no build step) and shares `ui_kits/_shared/icon.js`.
-Every kit has EN/AR + light/dark toggles.
+[English](#etkan-ui--اتقان) · **العربية**
 
-- **dashboard/** — Outreach overview: sidebar + product switcher, stat cards, channel chart,
-  campaigns table, "new campaign" dialog + toast.
-- **auth/** — split login / signup with brand panel and Google button.
-- **marketing/** — landing page: sticky nav, hero, feature grid, pricing, CTA band, footer.
-- **settings/** — tabbed settings: profile, workspace, notifications, billing.
-- **data-table/** — Contacts CRM: pill tabs, search + filters, bulk-select bar, tags, pagination.
+</div>
 
-## 9. Root manifest
-- `styles.css` — the single file consumers link; an `@import` manifest only.
-- `tokens/` — `fonts.css`, `colors.css`, `typography.css`, `spacing.css`, `radius.css`,
-  `shadows.css`, `motion.css`, `base.css` (reset + RTL foundation).
-- `components/` — reusable primitives (§7).
-- `ui_kits/` — full-screen recreations (§8) + `_shared/icon.js`.
-- `guidelines/` — foundation specimen cards (Type, Colors, Spacing).
-- `assets/` — logo files + the logo specimen card.
-- `readme.md` — this guide. `SKILL.md` — Agent-Skills wrapper.
+<div dir="rtl">
 
----
+**اتقان** تعني إتقان العمل وإحسانه. «ETKAN UI» مجموعة مكوّنات مبنية من الصفر دون الاعتماد على أي
+مكتبة واجهات خارجية؛ كل عنصر بصري مصدره وحدات التصميم (Tokens) والمكوّنات الأساسية الخاصة بالنظام.
+نسخة واحدة تخدم العربية والإنجليزية، والوضع الفاتح والداكن، في آنٍ واحد.
 
-## Fonts — substitution flag
-⚠️ **Google Fonts stand-ins in use.** IBM Plex Sans Arabic / Sans / Mono load from the Google
-Fonts CDN (no local binaries, so the compiler reports 0 `@font-face`). If you have licensed
-brand fonts, send them and they'll be added as real `@font-face` rules with shipped files.
+## المميّزات
+
+- **ثنائي اللغة فعلاً.** تعتمد المكوّنات على الخصائص المنطقية في CSS فقط
+  (`padding-inline`، `inset-inline-start`) ولا تستخدم `left`/`right` إطلاقاً، فيكفي تغيير `dir`
+  لتنقلب الواجهة بالكامل دون أي كود إضافي. ومُختبَرة في الاتجاهين.
+- **فاتح وداكن.** نسخة واحدة؛ السمة تُضبط عبر السمة `data-theme` على عنصر `<html>`.
+- **السعودية أولاً.** رمز الريال السعودي الرسمي، والتواريخ الهجرية (أم القرى)، والأرقام العربية
+  الهندية، وتنسيق الأرقام والعملة بصيغة `ar-SA` — جميعها عبر واجهات `Intl` في المنصّة، **دون أي
+  مكتبات ترجمة أو تواريخ**.
+- **بلا اعتماديات وقت التشغيل.** React هي الاعتمادية النظيرة الوحيدة، ووحدات التصميم CSS خالص.
+- **يشمل كل ما يلزم.** صِيغ ESM و CJS مع تعريفات TypeScript، ودعم `"use client"` لموجّه تطبيقات
+  Next.js.
+- **متاح للجميع.** حالات تركيز ظاهرة عبر `:focus-visible`، ومكوّنات نظيفة في فحص إمكانية الوصول
+  بالاتجاهين.
+
+## الحُزم
+
+| الحزمة | الوصف |
+| --- | --- |
+| `@backdoor_est/etkan-ui-tokens` | وحدات التصميم كخصائص CSS مخصّصة. مستقلّة عن أي إطار — تعمل مع React و Vue و Angular و Svelte أو صفحة HTML عادية. |
+| `@backdoor_est/etkan-ui-react` | مكتبة مكوّنات React (١٨ مكوّناً + أدوات «السعودية أولاً»). |
+
+## التثبيت
+
+```sh
+npm install @backdoor_est/etkan-ui-react @backdoor_est/etkan-ui-tokens
+```
+
+يتطلّب React الإصدار ١٨ أو ١٩.
+
+## البداية السريعة
+
+```tsx
+import "@backdoor_est/etkan-ui-tokens";           // مرّة واحدة في جذر التطبيق
+import { Button, Input } from "@backdoor_est/etkan-ui-react";
+
+export default function App() {
+  return (
+    <form>
+      <Input label="البريد الإلكتروني" placeholder="you@company.com" />
+      <Button variant="primary">ابدأ مجاناً</Button>
+    </form>
+  );
+}
+```
+
+اضبط اتجاه اللغة والسمة مرّة واحدة على عنصر `<html>`، وستُعرض المكوّنات نفسها بشكل صحيح في الحالات
+الأربع:
+
+```html
+<html dir="rtl" data-theme="dark">   <!-- dir: "ltr" | "rtl"  ·  data-theme: "light" | "dark" -->
+```
+
+## أدوات «السعودية أولاً»
+
+```tsx
+import { SaudiRiyal, formatSAR, formatHijri, toArabicDigits } from "@backdoor_est/etkan-ui-react";
+
+<span>١٬٢٥٠٫٥٠ <SaudiRiyal /></span>            // رمز الريال الرسمي، يرث لون النص وحجمه
+
+formatSAR(1250.5);                              // "١٬٢٥٠٫٥٠ ر.س.‏"
+formatHijri(new Date());                        // "٢٤ محرم ١٤٤٧ هـ"  (أم القرى)
+toArabicDigits("2025");                         // "٢٠٢٥"
+```
+
+## المكوّنات
+
+- **النماذج** — Button · IconButton · Input · Textarea · Select · Checkbox · Radio · Switch
+- **البيانات** — Card · Badge · Tag · Table · Pagination
+- **التنبيهات** — Tooltip · Toast · Dialog
+- **التنقّل** — Tabs · Menu
+
+## أسس التصميم
+
+- **الحدود لا الظلال.** يأتي البناء من حدٍّ رفيع بمقدار 1px فوق سطح البطاقة، وتُحفَظ الظلال للقوائم
+  والحوارات والتحويم.
+- **لون تمييزي واحد باعتدال.** النيلي الكهربائي يقود الإجراءات والتركيز، والمرجاني الدافئ هو الومضة.
+- **خط IBM Plex** في كل مكان — يحصل النص العربي على ارتفاع سطر أكبر ولا يُطبَّق عليه تباعد الأحرف.
+- **شبكة تباعد بمقدار 4px** ونصف أقطار زوايا دقيقة ومتحفّظة.
+- **الحركة سريعة وهادفة** (140–200 مللي ثانية، ease-out) وتحترم `prefers-reduced-motion`.
+
+## التوثيق
+
+لكل مكوّن قصّة في Storybook بالعربية والإنجليزية × فاتح وداكن. للتشغيل محلياً:
+
+```sh
+npm install
+npm run docs        # يفتح Storybook على http://localhost:6006
+```
+
+## الرخصة
+
+[MIT](./LICENSE) © مهنّد باحشوان
+
+</div>
