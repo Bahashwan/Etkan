@@ -96,6 +96,8 @@
 
   /* Focus ring */
   --focus-ring: 0 0 0 3px rgba(91, 91, 240, 0.30);
+  /* Soft blurred glow paired with an accent border for a single glowing edge */
+  --focus-glow: 0 0 6px 1px rgba(91, 91, 240, 0.55);
 
   /* Brand gradient (used sparingly — hero, logo, key CTAs) */
   --brand-gradient: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-400) 45%, var(--accent-400) 100%);
@@ -142,5 +144,6 @@
   --info-surface:    rgba(47, 126, 246, 0.18);  --info-text:    #7FB0F8;  --info-solid:    #3B82F6;
 
   --focus-ring: 0 0 0 3px rgba(124, 134, 250, 0.40);
+  --focus-glow: 0 0 6px 1px rgba(124, 134, 250, 0.65);
   --brand-gradient: linear-gradient(135deg, var(--primary-400) 0%, var(--primary-300) 45%, var(--accent-400) 100%);
 }

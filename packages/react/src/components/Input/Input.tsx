@@ -57,11 +57,10 @@ export function Input({
     [ariaDescribedBy, showError || helperText ? messageId : undefined].filter(Boolean).join(" ") ||
     undefined;
 
-  const borderColor = showError
-    ? "var(--danger-solid)"
-    : focus
-      ? "var(--border-focus)"
-      : "var(--border-default)";
+  // The field container (this outer wrapper) owns the border; the inner <input>
+  // has none. The border keeps its neutral (or error) color at all times — on
+  // focus we add only a soft blurred glow, never a hard accent border line.
+  const borderColor = showError ? "var(--danger-solid)" : "var(--border-default)";
 
   return (
     <div
@@ -96,7 +95,7 @@ export function Input({
           background: disabled ? "var(--surface-sunken)" : "var(--surface-card)",
           border: `1px solid ${borderColor}`,
           borderRadius: "var(--radius-md)",
-          boxShadow: focus ? "var(--focus-ring)" : "none",
+          boxShadow: focus && !showError ? "var(--focus-glow)" : "none",
           transition:
             "border-color var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard)",
           opacity: disabled ? 0.6 : 1,
