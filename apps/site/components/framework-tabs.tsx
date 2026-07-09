@@ -9,116 +9,111 @@ interface Framework {
   label: string;
   install: string[];
   code: string;
+  lang: string;
   note?: string;
 }
 
 const FRAMEWORKS: Framework[] = [
   {
-    id: "react",
-    label: "React / Next.js",
-    install: ["npm install @backdoor_est/etkan-ui-react @backdoor_est/etkan-ui-tokens"],
-    code: `import "@backdoor_est/etkan-ui-tokens";        // once, at your app root
-import { Button, Input } from "@backdoor_est/etkan-ui-react";
-
-export default function App() {
-  return (
-    <>
-      <Input label="Email" placeholder="you@company.com" />
-      <Button variant="primary">Start free</Button>
-    </>
-  );
-}`,
+    id: "html",
+    label: "Plain HTML",
+    install: ["# no build step — just two tags"],
+    lang: "html",
+    note: "The IIFE bundle registers every element and includes its dependency, so a single <script> is all you need.",
+    code: `<!doctype html>
+<html lang="ar" dir="rtl" data-theme="light">
+  <head>
+    <link rel="stylesheet"
+      href="https://unpkg.com/@backdoor_est/etkan-ui-tokens/css/index.css" />
+    <script
+      src="https://unpkg.com/@backdoor_est/etkan-ui-elements/dist/index.global.js"></script>
+  </head>
+  <body>
+    <etkan-button variant="primary">ابدأ</etkan-button>
+    <etkan-input label="Email" placeholder="you@company.com"></etkan-input>
+    <etkan-price amount="1,250.50"></etkan-price>
+  </body>
+</html>`,
   },
   {
     id: "vue",
     label: "Vue",
-    install: ["npm install @backdoor_est/etkan-ui-tokens"],
-    note: "The React components are React-only, but the design tokens are pure CSS — style your own Vue components with ETKAN's variables.",
+    install: ["npm install @backdoor_est/etkan-ui-elements @backdoor_est/etkan-ui-tokens"],
+    lang: "ts",
+    note: "Tell Vue that etkan-* tags are custom elements (vite.config → vue({ template: { compilerOptions: { isCustomElement: (t) => t.startsWith('etkan-') } } })).",
     code: `// main.ts
 import "@backdoor_est/etkan-ui-tokens";
+import "@backdoor_est/etkan-ui-elements";
+import { createApp } from "vue";
+import App from "./App.vue";
+createApp(App).mount("#app");
 
-<!-- Button.vue -->
+<!-- App.vue -->
 <template>
-  <button class="etkan-btn"><slot /></button>
-</template>
-
-<style scoped>
-.etkan-btn {
-  background: var(--brand-primary);
-  color: var(--text-on-primary);
-  padding: 0 var(--space-4);
-  height: var(--control-height-md);
-  border: none;
-  border-radius: var(--radius-md);
-  font-family: var(--font-sans);
-}
-</style>`,
+  <etkan-button variant="primary">حفظ</etkan-button>
+  <etkan-switch label="Notifications" checked />
+</template>`,
   },
   {
     id: "angular",
     label: "Angular",
-    install: ["npm install @backdoor_est/etkan-ui-tokens"],
-    note: "Import the tokens once in your global styles, then build components against the CSS variables.",
-    code: `/* styles.css (angular.json → styles) */
-@import "@backdoor_est/etkan-ui-tokens";
+    install: ["npm install @backdoor_est/etkan-ui-elements @backdoor_est/etkan-ui-tokens"],
+    lang: "ts",
+    note: "Add CUSTOM_ELEMENTS_SCHEMA to the component/module so Angular allows the etkan-* tags.",
+    code: `// main.ts
+import "@backdoor_est/etkan-ui-tokens";
+import "@backdoor_est/etkan-ui-elements";
 
-/* button.component.css */
-.etkan-btn {
-  background: var(--brand-primary);
-  color: var(--text-on-primary);
-  height: var(--control-height-md);
-  padding-inline: var(--space-4);
-  border-radius: var(--radius-md);
-  border: none;
-}`,
+// app.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
+@Component({
+  selector: "app-root",
+  standalone: true,
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  template: \`
+    <etkan-button variant="primary">حفظ</etkan-button>
+    <etkan-input label="Email"></etkan-input>
+  \`,
+})
+export class AppComponent {}`,
   },
   {
     id: "svelte",
     label: "Svelte",
-    install: ["npm install @backdoor_est/etkan-ui-tokens"],
-    note: "Framework-agnostic tokens work the same in Svelte.",
-    code: `<!-- +layout.svelte -->
-<script>import "@backdoor_est/etkan-ui-tokens";</script>
+    install: ["npm install @backdoor_est/etkan-ui-elements @backdoor_est/etkan-ui-tokens"],
+    lang: "svelte",
+    note: "Svelte supports custom elements out of the box — no config needed.",
+    code: `<script>
+  import "@backdoor_est/etkan-ui-tokens";
+  import "@backdoor_est/etkan-ui-elements";
+</script>
 
-<button class="etkan-btn">Start free</button>
-
-<style>
-  .etkan-btn {
-    background: var(--brand-primary);
-    color: var(--text-on-primary);
-    height: var(--control-height-md);
-    padding-inline: var(--space-4);
-    border-radius: var(--radius-md);
-    border: none;
-  }
-</style>`,
+<etkan-button variant="primary">حفظ</etkan-button>
+<etkan-badge tone="success" variant="soft">Paid</etkan-badge>`,
   },
   {
-    id: "html",
-    label: "Plain HTML",
-    install: ["npm install @backdoor_est/etkan-ui-tokens"],
-    note: "No build step? Link the CSS directly and set dir + data-theme on <html>.",
-    code: `<!doctype html>
-<html lang="en" dir="ltr" data-theme="light">
-  <head>
-    <link rel="stylesheet" href="node_modules/@backdoor_est/etkan-ui-tokens/css/index.css" />
-  </head>
-  <body>
-    <button style="
-      background: var(--brand-primary);
-      color: var(--text-on-primary);
-      height: var(--control-height-md);
-      padding-inline: var(--space-4);
-      border: none; border-radius: var(--radius-md);">
-      Start free
-    </button>
-  </body>
-</html>`,
+    id: "react",
+    label: "React",
+    install: ["npm install @backdoor_est/etkan-ui-elements @backdoor_est/etkan-ui-tokens"],
+    lang: "tsx",
+    note: "React 19 handles custom elements natively. (Prefer @backdoor_est/etkan-ui-react for idiomatic React components.)",
+    code: `import "@backdoor_est/etkan-ui-tokens";
+import "@backdoor_est/etkan-ui-elements";
+
+export default function App() {
+  return (
+    <>
+      <etkan-button variant="primary">Save</etkan-button>
+      <etkan-input label="Email" placeholder="you@company.com" />
+    </>
+  );
+}`,
   },
 ];
 
 export function FrameworkTabs() {
-  const [active, setActive] = React.useState("react");
+  const [active, setActive] = React.useState("html");
   const fw = FRAMEWORKS.find((f) => f.id === active)!;
 
   return (
@@ -145,7 +140,7 @@ export function FrameworkTabs() {
             {fw.note}
           </p>
         )}
-        <CodeBlock code={fw.code} lang={fw.id === "react" ? "tsx" : fw.id === "html" ? "html" : "js"} />
+        <CodeBlock code={fw.code} lang={fw.lang} />
       </div>
     </div>
   );
