@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Badge, Table, type TableColumn } from "@etkan-ui/react";
+import { Badge, SaudiRiyal, Table, type TableColumn } from "@etkan-ui/react";
 
 const meta: Meta<typeof Table> = {
   title: "Data/Table",
@@ -45,7 +45,7 @@ const columns: TableColumn<Invoice>[] = [
     header: "Amount",
     align: "end",
     nowrap: true,
-    render: (row) => <span>{row.amount} ر.س</span>,
+    render: (row) => <span>{row.amount} <SaudiRiyal /></span>,
   },
 ];
 
@@ -78,7 +78,7 @@ export const Arabic: Story = {
           header: "المبلغ",
           align: "end",
           nowrap: true,
-          render: (row) => <span>{row.amount} ر.س</span>,
+          render: (row) => <span>{row.amount} <SaudiRiyal /></span>,
         },
       ]}
       data={data}

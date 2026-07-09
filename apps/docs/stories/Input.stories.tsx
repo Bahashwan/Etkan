@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Input } from "@etkan-ui/react";
+import { Input, SaudiRiyal } from "@etkan-ui/react";
 
 const meta: Meta<typeof Input> = {
   title: "Forms/Input",
@@ -58,7 +58,7 @@ export const Price: Story = {
         label="Price"
         type="number"
         placeholder="0.00"
-        prefix="ر.س"
+        prefix={<SaudiRiyal />}
         helperText="Amount in Saudi Riyal."
       />
     </div>
@@ -74,7 +74,7 @@ export const Arabic: Story = {
         placeholder="you@company.com"
         helperText="لن نشارك بريدك مع أحد."
       />
-      <Input label="المبلغ" type="number" placeholder="0.00" prefix="ر.س" />
+      <Input label="المبلغ" type="number" placeholder="0.00" prefix={<SaudiRiyal />} />
     </div>
   ),
 };

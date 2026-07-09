@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Card } from "@etkan-ui/react";
+import { Card, SaudiRiyal } from "@etkan-ui/react";
 
 const meta: Meta<typeof Card> = {
   title: "Data/Card",
@@ -41,7 +41,7 @@ export const Variants: Story = {
         {...args}
         variant="outlined"
         header="Invoice #10428"
-        footer={<span style={{ fontWeight: 600 }}>Total: 3,450 ر.س</span>}
+        footer={<span style={{ fontWeight: 600 }}>Total: 3,450 <SaudiRiyal /></span>}
       >
         Two line items · due in 14 days.
       </Card>
@@ -57,7 +57,7 @@ export const Arabic: Story = {
         variant="elevated"
         interactive
         header="فاتورة رقم ١٠٤٢٨"
-        footer={<span style={{ fontWeight: 600 }}>الإجمالي: 3٬450 ر.س</span>}
+        footer={<span style={{ fontWeight: 600 }}>الإجمالي: 3٬450 <SaudiRiyal /></span>}
       >
         بندان · مستحقة خلال ١٤ يوماً.
       </Card>

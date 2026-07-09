@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Badge } from "@etkan-ui/react";
+import { Badge, SaudiRiyal } from "@etkan-ui/react";
 
 const meta: Meta<typeof Badge> = {
   title: "Data/Badge",
@@ -37,7 +37,7 @@ export const AllTones: Story = {
 export const SoftAndSolid: Story = {
   render: () => (
     <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-      <Badge tone="success" variant="soft">1,200 ر.س</Badge>
+      <Badge tone="success" variant="soft">1,200 <SaudiRiyal /></Badge>
       <Badge tone="success" variant="solid">Paid</Badge>
       <Badge tone="danger" variant="soft">Overdue</Badge>
       <Badge tone="danger" variant="solid">Failed</Badge>
@@ -49,7 +49,7 @@ export const Arabic: Story = {
   globals: { direction: "rtl" },
   render: () => (
     <div style={{ display: "flex", gap: 12, flexWrap: "wrap", alignItems: "center" }}>
-      <Badge tone="success" dot>مدفوعة · 1٬200 ر.س</Badge>
+      <Badge tone="success" dot>مدفوعة · 1٬200 <SaudiRiyal /></Badge>
       <Badge tone="warning">قيد المراجعة</Badge>
       <Badge tone="danger" variant="solid">متأخرة</Badge>
     </div>
